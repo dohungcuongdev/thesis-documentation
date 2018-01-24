@@ -18,35 +18,8 @@ var ipSuggestSchema = new Schema(
 
 var ipSuggest = module.exports = mongoose.model('ip-suggest', ipSuggestSchema);
 
-module.exports.findByUserIP = function (ip, callbackAction) {
-    var query = { ip: ip };
-    ipSuggest.findOne(query, callbackAction)
-};
+module.exports.findByUserIP = function (ip, callbackAction) 
 
-module.exports.add = function (newIPSuggest) {
-    newIPSuggest.save();
-};
+module.exports.add = function (newIPSuggest) 
 
-module.exports.update = function (id, newIPSuggest) {
-    ipSuggest.findOne({ '_id': id }, function (err, ipSuggested) {
-			if(err || ipSuggested == null){
-				console.log(err);
-			}else{
-                ipSuggested.remove({ _id: id }, function (err, resource) {
-                    if (err) {
-                        console.log(err);
-                    } else {
-                        console.log(newIPSuggest);
-                        ipSuggested = newIPSuggest;
-                        ipSuggested._id = id;
-                        ipSuggested.save(function(err){
-                            if(err) console.log(err);
-                            else {
-                                //console.log("Updated");
-                            }
-                        });
-                    }
-                })
-			}
-		});
-};
+module.exports.update = function (id, newIPSuggest) 

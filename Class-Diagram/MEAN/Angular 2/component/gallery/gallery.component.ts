@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { FollowUsersService } from '../../service/follow-users.service';
+
 import * as AppConst from '../../constant/app.const';
 
 @Component({
@@ -15,9 +14,7 @@ export class GalleryComponent {
     this.followUserService.followUsers(AppConst.CLICK_GALLERY)
   }
 
-  ngOnInit() {
-    for(var i = 0; i <= 86; i++) {
-      this.imagesGallery[i] = "images/photos/" + i + ".jpg"
-    }
-  }
+  ngOnInit()
+  
+  showAllImgGallery() 
 }

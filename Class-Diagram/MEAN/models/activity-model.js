@@ -21,36 +21,16 @@ var activitySchema = new Schema(
 );
 var activity = module.exports = mongoose.model('activity', activitySchema);
 
-module.exports.findAll = function (callbackAction) {
-    activity.find({}, callbackAction).sort({"created_at": -1});
-};
+module.exports.findAll = function (callbackAction) 
 
 //function get activity by username
-module.exports.findActivityByUserName = function (username, callbackAction) {
-    var query = { username: username };
-    activity.find(query, callbackAction).sort({"created_at": -1});
-};
+module.exports.findActivityByUserName = function (username, callbackAction) 
 
 // find activity that haven't been responsed yet
-module.exports.findNotResponseActivity = function (username, callbackAction) {
-    var query = { response: "Not Yet" };
-    activity.find(query, callbackAction).sort({"created_at": -1});
-};
+module.exports.findNotResponseActivity = function (username, callbackAction) 
 
-module.exports.findFeedbackRoom = function (roomid, callbackAction) {
-    var query = { name: 'Feedback Room', click: roomid };
-    activity.find(query, callbackAction).sort({"created_at": -1});
-};
+module.exports.findFeedbackRoom = function (roomid, callbackAction) 
 
-module.exports.addActivity = function (newActivity) {
-    newActivity.save();
-};
+module.exports.addActivity = function (newActivity) 
 
-module.exports.updateResponse = function(id, response) {
-    var query = { _id: id };
-    var newvalues = { $set: { response: response } };
-    activity.updateOne(query, newvalues, function(err, res) {
-        if (err) console.log(err);
-        console.log("1 document updated");
-    });
-}
+module.exports.updateResponse = function(id, response) 

@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { FollowUsersService } from '../../service/follow-users.service';
+
 import * as AppConst from '../../constant/app.const';
 
 @Component({

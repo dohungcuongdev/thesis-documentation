@@ -1,10 +1,3 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { AuthenticationService } from '../../service/authentication.service';
-import { UserService } from '../../service/user.service';
-import { InMemoryDataService } from '../../service/in-memory-data.service';
-import { User } from '../../model/user';
-import { CookieService } from 'angular2-cookie/core';
 
 @Component({
   selector: 'header',
@@ -19,17 +12,7 @@ export class HeaderComponent {
     private data: InMemoryDataService,
     private cookie: CookieService) { }
 
-  login() {
-    if (this.auth.authenticated == false)
-      location.href = '/login'
-    else
-      location.href = '/'
-  }
+  login() 
 
-  logout() {
-    this.auth.authenticated = false
-    this.data.resetUser()
-    this.cookie.remove('id')
-    location.href = '/logout'
-  }
+  logout() 
 }

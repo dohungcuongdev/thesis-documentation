@@ -1,8 +1,4 @@
-import { Injectable } from '@angular/core';
-import { UserService } from './user.service'
-import { User } from '../model/user';
-import { InMemoryDataService } from '../service/in-memory-data.service';
-import { CookieService } from 'angular2-cookie/core';
+
 import * as AppConst from '../constant/app.const';  //use constant
 declare var swal: any;
 
@@ -16,26 +12,7 @@ export class AuthenticationService {
         private userservice: UserService,
         private cookie: CookieService) { }
 
-    public checkAuthentication() {
-        let id = this.cookie.get("id")
-        if (id != null && id != '') {
-            this.userservice.getUser(id).subscribe((user: User) => {
-                if (user.username != null) {
-                    this.authenticated = true
-                    this.data.user = user
-                }
-            })
-        }
-    }
+    public checkAuthentication() 
 
-    public pleaselogin(): void {
-        swal({
-            title: AppConst.LOGIN_RES,
-            text:  AppConst.LOGIN_TO_USE,
-            type: "warning",
-            showCancelButton: true
-        }, function () {
-            window.location.href = '/login';
-        });
-    }
+    public pleaselogin(): void 
 }

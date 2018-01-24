@@ -1,4 +1,3 @@
-import { Component } from '@angular/core';
 import * as AppConst from '../../constant/app.const';
 
 @Component({

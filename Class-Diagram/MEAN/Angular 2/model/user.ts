@@ -2,14 +2,7 @@
 
 export class User {
 
-    constructor(username: string, name: string, phone: string, address: string, created_at: Date, balance: number) {
-        this.name = name
-        this.username = username
-        this.phone = phone
-        this.address = address
-        this.created_at = created_at
-        this.balance = balance
-    }
+    constructor(username: string, name: string, phone: string, address: string, created_at: Date, balance: number)
 
     id: string
     username: string

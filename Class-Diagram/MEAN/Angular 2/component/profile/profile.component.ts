@@ -1,13 +1,4 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
-import { Router } from '@angular/router';
-import { Activity } from '../../model/activity';
-import { AuthenticationService } from '../../service/authentication.service';
-import { ActivityService } from '../../service/activity.service';
-import { InMemoryDataService } from '../../service/in-memory-data.service';
-import { FollowUsersService } from '../../service/follow-users.service';
-import { UserService } from '../../service/user.service';
-import { CookieService } from 'angular2-cookie/core';
-import { ValidationService } from '../../service/validation.service';
+
 import * as AppConst from '../../constant/app.const';
 
 @Component({
@@ -33,66 +24,19 @@ export class ProfileComponent implements OnInit, OnChanges {
     this.followUserService.followUsers(AppConst.CLICK_PROFILE)
   }
 
-  private initialize() {
-    if (this.cookie.get("id") == null) {
-      this.auth.pleaselogin()
-    } else {
-      this.LoadData()
-    }
-  }
+  private initialize()
 
-  LoadData() {
-    let username = this.data.user.username
-    this.activityservice.getAllActivityByUserName(username).subscribe((listactivity: Activity[]) => {
-      this.listactivity = listactivity
-    }, error => {
-      console.log(error)
-    });
-  }
+  LoadData()
 
-  ngOnInit(): void {
-    this.initialize()
-  }
+  ngOnInit()
 
-  ngOnChanges() {
-    this.initialize()
-  }
+  ngOnChanges()
 
-  clickdetail(s: string) {
-    document.documentElement.scrollTop = 0
-    document.body.scrollTop = 0
-    if (s === 'feedback')
-      this.router.navigate(['/feedback'])
-    else if (s === 'register') {
-      this.router.navigate(['/profile'])
-    } else
-      this.router.navigate(['/room-details', s])
-  }
+  clickdetail(s: string)
 
-  viewcontent(content: string) {
-    this.validationService.swAlert(content);
-  }
+  viewcontent(content: string)
 
-  editInfo() {
-    this.canEdit = true
-  }
+  editInfo()
 
-  saveInfo(name: string, phone: string, address: string) {
-    this.canEdit = false
-    if (name === null || name === '' || phone === null || phone === '' || address === null || address === '')
-      this.validationService.swAlertNotEnoughInput()
-    else {
-      let user = this.data.user
-      user.name = name
-      user.phone = phone
-      user.address = address
-      this.userservice.editUser(user).subscribe(
-        responsse => {
-          if (responsse) {
-            this.validationService.swAlertEditSuccess()
-          }
-        }, err => this.validationService.swAlertUsualErr(err)
-      )
-    }
-  }
+  saveInfo(name: string, phone: string, address: string)
 }
