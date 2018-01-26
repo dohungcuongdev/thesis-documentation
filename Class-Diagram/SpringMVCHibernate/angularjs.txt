@@ -1,3 +1,0 @@
-colunm-chart-angular
-follow-user-angular
-pie-chart-angular

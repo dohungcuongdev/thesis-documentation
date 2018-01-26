@@ -1,60 +1,60 @@
 
 public interface ApplicationService {
 
-	public String uploadImage(CommonsMultipartFile commonsMultipartFiles, HttpServletRequest request, ModelMap model, String itemType);
-	public void uploadPDF(CommonsMultipartFile commonsMultipartFiles, HttpServletRequest request, ModelMap model);
-	public String sendEmail(String message, String sendto, String subject);
-	public String removeAccent(String originalString);
+ + uploadImage(CommonsMultipartFile commonsMultipartFiles, HttpServletRequest request, ModelMap model, String itemType): String 
+ + uploadPDF(CommonsMultipartFile commonsMultipartFiles, HttpServletRequest request, ModelMap model): void 
+ + sendEmail(String message, String sendto, String subject): String 
+ + removeAccent(String originalString): String 
 }
 
 
 public interface HotelItemService {
     
-    public HotelRoom getRoomByID(int id);
-    public HotelRoom getRoomByName(String name);
-    public List<HotelRoom> getAllRooms();
-    public long getNumRooms();
-    public List<HotelRoom> getRoomByPage(int page);
-    public List<HotelRoom> getRelatedHotelRooms(String type);
-    public void updateRoom(HotelRoom room);
-    public String findAndAddNewRoom(HotelRoom newRoom);
-    public void editImageRoom(String name, String img, String img2);    
-    public void deleteRoom(int id);
-    public void bookRoom(HotelRoom room);
-    public HotelService getHotelServiceByID(int id);
-    public HotelService getHotelServiceByName(String name);
-    public List<HotelService> getAllHotelServices();   
-    public List<HotelService> getRelatedHotelServices(String type);
-    public String findAndAddNewService(HotelService newService);
-    public void updateService(HotelService service);    
-    public void editImageService(String name, String img, String img2);    
-    public void deleteService(int id);
-    public void convertRoomFromMongoToMySQL();
-    public void convertRestaurantMongoToMySQL();
+ + HotelRoom getRoomByID(int id);
+ + HotelRoom getRoomByName(String name);
+ + List<HotelRoom> getAllRooms();
+ + long getNumRooms();
+ + List<HotelRoom> getRoomByPage(int page);
+ + List<HotelRoom> getRelatedHotelRooms(String type);
+ + void updateRoom(HotelRoom room);
+ + String findAndAddNewRoom(HotelRoom newRoom);
+ + void editImageRoom(String name, String img, String img2);    
+ + void deleteRoom(int id);
+ + void bookRoom(HotelRoom room);
+ + HotelService getHotelServiceByID(int id);
+ + HotelService getHotelServiceByName(String name);
+ + List<HotelService> getAllHotelServices();   
+ + List<HotelService> getRelatedHotelServices(String type);
+ + String findAndAddNewService(HotelService newService);
+ + void updateService(HotelService service);    
+ + void editImageService(String name, String img, String img2);    
+ + void deleteService(int id);
+ + void convertRoomFromMongoToMySQL();
+ + void convertRestaurantMongoToMySQL();
 }
 
 
 public interface UserService {    
     
-    public List<FollowUsers> getListFollowUsers();   
-    public List<PageAccessChartData> getPageAccessChartData();    
-    public List<PageAccessChartData> getPageAccessChartDataByIP(String ipaddress);
-    public List<PageAccessChartData> getPageAccessChartDataByUsername(String username);
-    public ExternalIP getExternalIPDetails(String external_ip_address);
-    public List<CountryChartData> getCountryChartData();
-    public Customer getCustomerByUsername(String username);
-    public List<Customer> getAllCustomers();   
-    public List<CustomerBehavior> getDataCollection();  
-    public CustomerBehavior getOneDataCollection(String username);  
-    public Administrator getAdminByUserName(String username);
-    public void updateAdmin(Administrator ad);
-    public void updatePassword(String username,  String newpassword);
-    public void editProfileImg(String username, String img);
-    public List<Activity> getAllActivity();
-    public List<Activity> getAllActivityByUserName(String username);
-    public List<Activity> getNewListNotification();
-    public Activity getActivityBy(String id);
-    public Activity seenNotification(String id);
-    public Activity replyNotification(String id);
+ + List<FollowUsers> getListFollowUsers();   
+ + List<PageAccessChartData> getPageAccessChartData();    
+ + List<PageAccessChartData> getPageAccessChartDataByIP(String ipaddress);
+ + List<PageAccessChartData> getPageAccessChartDataByUsername(String username);
+ + ExternalIP getExternalIPDetails(String external_ip_address);
+ + List<CountryChartData> getCountryChartData();
+ + Customer getCustomerByUsername(String username);
+ + List<Customer> getAllCustomers();   
+ + List<CustomerBehavior> getDataCollection();  
+ + CustomerBehavior getOneDataCollection(String username);  
+ + Administrator getAdminByUserName(String username);
+ + void updateAdmin(Administrator ad);
+ + void updatePassword(String username,  String newpassword);
+ + void editProfileImg(String username, String img);
+ + List<Activity> getAllActivity();
+ + List<Activity> getAllActivityByUserName(String username);
+ + List<Activity> getNewListNotification();
+ + Activity getActivityBy(String id);
+ + Activity seenNotification(String id);
+ + Activity replyNotification(String id);
 }
 

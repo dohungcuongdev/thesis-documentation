@@ -1,32 +1,32 @@
 
 DateTimeCalculator {
 	
-	public static Date getToday()
+ + Date getToday() <<static>>
 	
-	public static String getTimeToday()
+ + String getTimeToday() <<static>>
 	
-    	public static Date getDateFormated(String strDate)
+ + Date getDateFormated(String strDate) <<static>>
     
-    	public static Date formatDateTime(String dateTime, String format)
+ + Date formatDateTime(String dateTime, String format) <<static>>
 
-    	public static Date formatDateTime(String dateTime)
+ + Date formatDateTime(String dateTime) <<static>>
     
-    	public static Date getICTDateTime(String dateTime) 
+ + Date getICTDateTime(String dateTime) <<static>> 
 }
 
 
 EmailSender {
 
-    public static String sendEmail(String message, String sendto, String subject)
+ + String sendEmail(String message, String sendto, String subject) <<static>>
 
-    private static class SMTPAuthenticator extends Authenticator {
+ - <<static>> class SMTPAuthenticator extends Authenticator { 
 
-        private final PasswordAuthentication authentication;
+        - final PasswordAuthentication authentication;
 
-        public SMTPAuthenticator(String login, String password)
+		+ SMTPAuthenticator(String login, String password): 
 
         @Override
-        protected PasswordAuthentication getPasswordAuthentication()
+		# PasswordAuthentication getPasswordAuthentication()
     }
 }
 
@@ -34,65 +34,50 @@ EmailSender {
 FileUploader {
 
 	// upload image
-    public static String uploadImage(CommonsMultipartFile commonsMultipartFiles, HttpServletRequest request, ModelMap model, String itemType)
+ + uploadImage(CommonsMultipartFile commonsMultipartFiles, HttpServletRequest request, ModelMap model, String itemType): String <<static>>
     
 	// upload PDF
-    public static void uploadPDF(CommonsMultipartFile commonsMultipartFiles, HttpServletRequest request, ModelMap model)
+ + uploadPDF(CommonsMultipartFile commonsMultipartFiles, HttpServletRequest request, ModelMap model): void <<static>>
 }
 
 GeoLookup {
 
-    private static LookupService lookUp;
+ - lookUp: LookupService <<static>>
 
 	//get location based on external IP
-    public static GeoLocation getLocation(String externalIP)
+ + getLocation(String externalIP): GeoLocation <<static>>
 }
 
 public class MathCalculator {
 	
 	//rounding decimal number
-	public static double round(double value)
+ + round(double value): double <<static>>
 
 	//rounding decimal number
-    public static double round(double value, int places)
+ + round(double value, int places): double <<static>>
 }
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package statics.provider;
-
-import java.text.Normalizer;
-import java.util.Arrays;
-import java.util.regex.Pattern;
-
-/**
- *
- * @author Do Hung Cuong
- */
 public class StringUtils {
 
     // Array vietnamese character
-    private static final char[] SOURCE_CHARACTERS
+ - SOURCE_CHARACTERS: char[] <<static>> <<final>>
 
     // Array latin character
-    private static final char[] DESTINATION_CHARACTERS
+ - DESTINATION_CHARACTERS: char[] <<static>> <<final>>
 	
 	//removeAccent of character
-    public static char removeAccent(char ch)
+ + removeAccent(char ch): char <<static>>
 
 	//removeAccent of String
-    public static String removeAccent(String s)
+ + removeAccent(String s): String <<static>>
     
     //remove accent except some special character
-    public static String encode(String s)
+ + encode(String s): String <<static>>
     
     //lowercase first character of string
-    public static String lowerFirstChar(String varname)
+ + lowerFirstChar(String varname): String <<static>>
 
     //uppercase first character of string
-    public static String upperFirstChar(String varname)
+ + upperFirstChar(String varname): String <<static>>
 }
 

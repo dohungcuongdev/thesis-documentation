@@ -1,30 +1,18 @@
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
-    Created on : May 11, 2017, 4:11:03 AM
-    Author     : HUNGCUONG
-*/
-
-const SPRING_API_URL = "http://localhost:8080/Hotel-booking-and-reservations-system-admin/api/";
-const MEAN_API_URL = "http://localhost:3000/api/";
-const TRACKING_API_URL = MEAN_API_URL + "follow-users/";
-const TRACKING_API_URL_PAGE = MEAN_API_URL + "follow-users/page/";
-const TRACKING_TOTAL_PAGE_API = TRACKING_API_URL + "count/page/";
-const SORT_TRACKING_API = TRACKING_API_URL + "sort/";
-const STATISTICS_API_URL = TRACKING_API_URL + "statistics/";
-const PIE_CHART_API_URL = SPRING_API_URL + "/country-chart";
-const PAGE_ACCESS_API_URL = STATISTICS_API_URL + "PageAccess/";
-const PAGE_ACCESS_IP_API_URL = PAGE_ACCESS_API_URL + "userIP/";
-const PAGE_ACCESS_MEMBER_API_URL = PAGE_ACCESS_API_URL + "username/";
-const COLUNM_CHART_API_URL = SPRING_API_URL + 'page-access-chart/';
-const IP_COLUNM_CHART_API_URL = COLUNM_CHART_API_URL + 'userIP/';
-const MEMBER_COLUNM_CHART_API_URL = COLUNM_CHART_API_URL + 'username/';
-const SEARCH_API = TRACKING_API_URL + 'search/';
-const TOTAL_PAGE_SEARCH_API = SEARCH_API + 'total-page/';
-const TRACKING_SEARCH_API = SEARCH_API + 'all/';
-const TOTAL_PAGE_DISPLAY = 3;
+SPRING_API_URL: const
+MEAN_API_URL: const
+TRACKING_API_URL: const
+TRACKING_API_URL_PAGE: const
+TRACKING_TOTAL_PAGE_API: const
+SORT_TRACKING_API: const
+STATISTICS_API_URL: const
+PIE_CHART_API_URL: const
+PAGE_ACCESS_API_URL: const
+PAGE_ACCESS_IP_API_URL: const
+PAGE_ACCESS_MEMBER_API_URL: const
+COLUNM_CHART_API_URL: const
+IP_COLUNM_CHART_API_URL: const
+MEMBER_COLUNM_CHART_API_URL: const
+SEARCH_API = TRACKING_API_URL: const
+TOTAL_PAGE_SEARCH_API: const
+TRACKING_SEARCH_API: const
+TOTAL_PAGE_DISPLAY: const

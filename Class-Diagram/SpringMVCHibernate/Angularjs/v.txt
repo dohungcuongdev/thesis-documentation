@@ -1,0 +1,11 @@
+click-tracking.jsp {
+	angular module :trackingTable { 
+		controller: trackingCtrl  {
+			getTrackingData();
+		}
+	}
+
+}
+
+
+

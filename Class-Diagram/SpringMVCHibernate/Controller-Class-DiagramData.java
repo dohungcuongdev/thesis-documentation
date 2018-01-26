@@ -1,265 +1,235 @@
 @Controller
-@RequestMapping(value = "/")
-public class AppController {
+<< "/" >>
+public class AppController { 
 
-	@Autowired
-	private UserService userService;
+ - UserService userService;
 
-	@Autowired
-	private HotelItemService hotelItemService;
+ - HotelItemService hotelItemService;
 
-	@Autowired
-	private ApplicationService appService;
+ - ApplicationService appService;
 
-	// login
-	@RequestMapping(value = "login", method = RequestMethod.GET)
-	public String login(HttpServletRequest request, HttpServletResponse response, ModelMap model)
+ <<"/login", method = GET >>
+ + login(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ 
+ << "/check-login", method = POST >>
+ + checklogin(LoginBean loginbean, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ 
+ << "/logout", method = GET >>
+ + logout(HttpServletRequest request) 
+ 
+ << "/index", method = GET >>
+ + index(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ 
+ << "/search-result/{keyword}", method = GET >>
+ + searchResult(String keyword, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 
-	// checklogin
-	@RequestMapping(value = "check-login", method = RequestMethod.POST)
-	public String checklogin(@ModelAttribute(value = "loginbean") LoginBean loginbean, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + profile(HttpServletRequest request, HttpServletResponse response, ModelMap model)  <<"/profile", method = GET >>
 
-	// logout
-	@RequestMapping(value = "logout", method = RequestMethod.GET)
-	public String logout(HttpServletRequest request)
+ << "/change-password", method = POST >>
+ changePassword(ChangePasswordBean changePassBean, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 
-	// index
-	@RequestMapping(value = "index", method = RequestMethod.GET)
-	public String index(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ << "/profile-edited", method = POST >>
+ editProfile(Administrator ad, HttpServletRequest request, HttpServletResponse response, ModelMap model)
 
-	@RequestMapping(value = "search-result/{keyword}", method = RequestMethod.GET)
-	public String searchResult(@PathVariable(value = "keyword") String keyword, HttpServletRequest request, HttpServletResponse response, ModelMap model)
+ << "/profile-img-edited", method = POST >>
+ profileImgEdited(CommonsMultipartFile img, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 
-	// profile
-	@RequestMapping(value = "profile", method = RequestMethod.GET)
-	public String profile(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ << {"/manage-rooms", "/room", "/rooms"}, method = GET >>
+ manageRooms(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 
-	// profile
-	@RequestMapping(value = "change-password", method = RequestMethod.POST)
-	public String changePassword(@ModelAttribute(value = "changePassBean") ChangePasswordBean changePassBean, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ << "/room/{roomName}", method = GET >>
+ singleRoom(String roomName, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 
-	@RequestMapping(value = "profile-edited", method = RequestMethod.POST)
-	public String editProfile(@ModelAttribute(value = "adminEdit") Administrator ad, HttpServletRequest request, HttpServletResponse response, ModelMap model)
+ << "/edit-room/{roomName}", method = GET >>
+ editRoom(String roomName, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 
-	@RequestMapping(value = "profile-img-edited", method = RequestMethod.POST)
-	public String profileImgEdited(@RequestParam(value = "img") CommonsMultipartFile img, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ << "/add-room", method = GET >>
+ addRoom(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 
-	// rooms
-	@RequestMapping(value = {"manage-rooms", "room", "rooms"}, method = RequestMethod.GET)
-	public String manageRooms(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ << "/room-added", method = POST >>
+ roomAdded(HotelRoom newRoom, HttpServletRequest request, HttpServletResponse response, ModelMap model)
 
-	@RequestMapping(value = "room/{roomName}", method = RequestMethod.GET)
-	public String singleRoom(@PathVariable(value = "roomName") String roomName, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ << "/room-edited", method = POST >>
+ roomEdited(HotelRoom roomEdit, HttpServletRequest request, HttpServletResponse response, ModelMap model)
 
-	@RequestMapping(value = "edit-room/{roomName}", method = RequestMethod.GET)
-	public String editRoom(@PathVariable(value = "roomName") String roomName, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ << "/remove-room/{id}", method = GET >>
+ removeRoom(int id, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 
-	@RequestMapping(value = "add-room", method = RequestMethod.GET)
-	public String addRoom(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ << "/room-img-edited/{roomName}", method = POST >>
+ roomImgEdited(CommonsMultipartFile img1, @RequestParam(value = "img2") CommonsMultipartFile img2, String roomName, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 
-	@RequestMapping(value = "room-added", method = RequestMethod.POST)
-	public String roomAdded(@ModelAttribute(value = "newRoom") HotelRoom newRoom, HttpServletRequest request, HttpServletResponse response, ModelMap model)
+ << {"/manage-restaurant", "/service", "/services"}, method = GET >>
+ manageRestaurant(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 
-	@RequestMapping(value = "room-edited", method = RequestMethod.POST)
-	public String roomEdited(@ModelAttribute(value = "roomEdit") HotelRoom roomEdit, HttpServletRequest request, HttpServletResponse response, ModelMap model)
+ << "/service/{servicename}", method = GET >>
+ singleService(String servicename, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 
-	@RequestMapping(value = "remove-room/{id}", method = RequestMethod.GET)
-	public String removeRoom(@PathVariable(value = "id") int id, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ << "/add-service", method = GET >>
+ addService(HttpServletRequest request, HttpServletResponse response, ModelMap model)
 
-	@RequestMapping(value = "room-img-edited/{roomName}", method = RequestMethod.POST)
-	public String roomImgEdited(@RequestParam(value = "img1") CommonsMultipartFile img1, @RequestParam(value = "img2") CommonsMultipartFile img2, @PathVariable(value = "roomName") String roomName, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ << "/service-added", method = POST >>
+ serviceAdded(HotelService newService, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 
-	// restaurant
-	@RequestMapping(value = {"manage-restaurant", "service", "services"}, method = RequestMethod.GET)
-	public String manageRestaurant(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ << "/edit-service/{servicename}", method = GET >>
+ editService(String servicename, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 
-	@RequestMapping(value = "service/{servicename}", method = RequestMethod.GET)
-	public String singleService(@PathVariable(value = "servicename") String servicename, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
-
-	@RequestMapping(value = "add-service", method = RequestMethod.GET)
-	public String addService(HttpServletRequest request, HttpServletResponse response, ModelMap model)
-
-	@RequestMapping(value = "service-added", method = RequestMethod.POST)
-	public String serviceAdded(@ModelAttribute(value = "newService") HotelService newService, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
-
-	@RequestMapping(value = "edit-service/{servicename}", method = RequestMethod.GET)
-	public String editService(@PathVariable(value = "servicename") String servicename, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
-
-	@RequestMapping(value = "service-edited", method = RequestMethod.POST)
-	public String serviceEdited(@ModelAttribute(value = "serviceEdit") HotelService serviceEdit, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ << "/service-edited", method = POST >>
+ serviceEdited(HotelService serviceEdit, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 	
-	@RequestMapping(value = "remove-service/{id}", method = RequestMethod.GET)
-	public String removeService(@PathVariable(value = "id") int id, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ << "/remove-service/{id}", method = GET >>
+ removeService(int id, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 
-	@RequestMapping(value = "service-img-edited/{servicename}", method = RequestMethod.POST)
-	public String serviceImgEdited(@RequestParam(value = "img1") CommonsMultipartFile img1, @RequestParam(value = "img2") CommonsMultipartFile img2, @PathVariable(value = "servicename") String servicename, HttpServletRequest request, HttpServletResponse response, ModelMap model)
+ << "/service-img-edited/{servicename}", method = POST >>
+ serviceImgEdited(CommonsMultipartFile img1, CommonsMultipartFile img2, String servicename, HttpServletRequest request, HttpServletResponse response, ModelMap model)
 
-	// users
-	@RequestMapping(value = "manage-users", method = RequestMethod.GET)
-	public String manageUsers(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ << "/manage-users", method = GET >>
+ manageUsers(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 	
-	@RequestMapping(value = "follow-all-users", method = RequestMethod.GET)
-	public String followAllUsers(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ << "/follow-all-users", method = GET >>
+ followAllUsers(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 	
-	@RequestMapping(value = "follow-users", method = RequestMethod.GET)
-	public String followUsers(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ << "/follow-users", method = GET >>
+ followUsers(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 	
-	@RequestMapping(value = "follow-users/{page}", method = RequestMethod.GET)
-	public String followUsersPage(@PathVariable(value = "page") int page, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ << "/follow-users/{page}", method = GET >>
+ followUsersPage(int page, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 	
-	@RequestMapping(value = "follow-users/{fieldname}/{sort}/{page}", method = RequestMethod.GET)
-	public String followUsersPageSorted(@PathVariable(value = "fieldname") String fieldname, @PathVariable(value = "sort") String sort, @PathVariable(value = "page") int page, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ << "/follow-users/{fieldname}/{sort}/{page}", method = GET >>
+ followUsersPageSorted(String fieldname, String sort, int page, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 	
-	@RequestMapping(value = "follow-users-search/{fieldname}/{keyword}/{sort}/{page}", method = RequestMethod.GET)
-	public String searchFollowUsers(@PathVariable(value = "fieldname") String fieldname, @PathVariable(value = "keyword") String keyword, @PathVariable(value = "sort") String sort, @PathVariable(value = "page") int page, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ << "/follow-users-search/{fieldname}/{keyword}/{sort}/{page}", method = GET >>
+ searchFollowUsers(String fieldname, String keyword, String sort, int page, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 
-	@RequestMapping(value = "tracking-ip", method = RequestMethod.GET)
-	public String trackingIP(HttpServletRequest request, HttpServletResponse response, ModelMap model)
+ << "/tracking-ip", method = GET >>
+ trackingIP(HttpServletRequest request, HttpServletResponse response, ModelMap model)
 
-	@RequestMapping(value = "tracking-exip", method = RequestMethod.GET)
-	public String trackingExternalIP(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ << "/tracking-exip", method = GET >>
+ trackingExternalIP(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 
-	@RequestMapping(value = "tracking-members", method = RequestMethod.GET)
-	public String trackingMemebers(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ << "/tracking-members", method = GET >>
+ trackingMemebers(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 	
-	@RequestMapping(value = "tracking-page-access", method = RequestMethod.GET)
-	public String pageAccessStatistics(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ << "/tracking-page-access", method = GET >>
+ pageAccessStatistics(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 
-	@RequestMapping(value = "country-chart", method = RequestMethod.GET)
-	public String followUserChart(HttpServletRequest request, HttpServletResponse response, ModelMap model)
+ << "/country-chart", method = GET >>
+ followUserChart(HttpServletRequest request, HttpServletResponse response, ModelMap model)
 
-	@RequestMapping(value = {"page-access-chart", "PageAccess/**"}, method = RequestMethod.GET)
-	public String pageAccessChart(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ << {"/page-access-chart", "/PageAccess/**"}, method = GET >>
+ pageAccessChart(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 
-	@RequestMapping(value = {"member-chart/{username}","Username/{username}"}, method = RequestMethod.GET)
-	public String pageAccessMemberChart(@PathVariable(value = "username") String username, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ << {"/member-chart/{username}","/Username/{username}"}, method = GET >>
+ pageAccessMemberChart(String username, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 	
-	@RequestMapping(value = {"page-access-chart/{ipaddress}", "UserIP/{ipaddress}"}, method = RequestMethod.GET)
-	public String pageAccessIPChart(@PathVariable(value = "ipaddress") String ipaddress, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ << {"/page-access-chart/{ipaddress}", "/UserIP/{ipaddress}"}, method = GET >>
+ pageAccessIPChart(String ipaddress, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 
-	@RequestMapping(value = "click-tracking-ip/{trackingParam}", method = RequestMethod.GET)
-	public String followUsersIP(@PathVariable(value = "trackingParam") String ip, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ << "/click-tracking-ip/{trackingParam}", method = GET >>
+ followUsersIP(String ip, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 	
-	@RequestMapping(value = "click-tracking-member/{trackingParam}", method = RequestMethod.GET)
-	public String followMember(@PathVariable(value = "trackingParam") String username, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ << "/click-tracking-member/{trackingParam}", method = GET >>
+ followMember(String username, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 	
-	@RequestMapping(value = {"ip-details/{externalip}", "ExternalIP/{externalip}"}, method = RequestMethod.GET)
-	public String ipDetails(@PathVariable(value = "externalip") String externalip, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ << {"/ip-details/{externalip}", "/ExternalIP/{externalip}"}, method = GET >>
+ ipDetails(String externalip, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 
-	@RequestMapping(value = "user", method = RequestMethod.GET)
-	public String singleUser(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ << "/user", method = GET >>
+ singleUser(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 
-	@RequestMapping(value = "customer", method = RequestMethod.GET)
-	public String singleCustomer(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ << "/customer", method = GET >>
+ singleCustomer(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 
-	@RequestMapping(value = "user/{username}", method = RequestMethod.GET)
-	public String singleUser(@PathVariable(value = "username") String username, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ << "/user/{username}", method = GET >>
+ singleUser(String username, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 
-	@RequestMapping(value = "customer/{username}", method = RequestMethod.GET)
-	public String singleCustomer(@PathVariable(value = "username") String username, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ << "/customer/{username}", method = GET >>
+ singleCustomer(String username, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 
-	// message
-	@RequestMapping(value = "message", method = RequestMethod.GET)
-	public String message(HttpServletRequest request, HttpServletResponse response, ModelMap model)  
+ << "/message", method = GET >>
+ message(HttpServletRequest request, HttpServletResponse response, ModelMap model)  
 
-	@RequestMapping(value = "notification/{id}", method = RequestMethod.GET)
-	public String notification(@PathVariable(value = "id") String id, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ << "/notification/{id}", method = GET >>
+ notification(String id, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 
-	@RequestMapping(value = "reply Book Room/{id}", method = RequestMethod.GET)
-	public String replyBooking(@PathVariable(value = "id") String id, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ << "/reply Book Room/{id}", method = GET >>
+ replyBooking(String id, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 
-	@RequestMapping(value = "reply Cancel Room/{id}", method = RequestMethod.GET)
-	public String replyCancel(@PathVariable(value = "id") String id, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ << "/reply Cancel Room/{id}", method = GET >>
+ replyCancel(String id, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 
-	@RequestMapping(value = "send-mail", method = RequestMethod.POST)
-	public String sendMail(@RequestParam("activity-id") String id, @RequestParam("message") String message, @RequestParam("user-email") String useremail, @RequestParam("subject") String subject, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ << "/send-mail", method = POST >>
+ sendMail(String id, @RequestParam("message") String message, @RequestParam("user-email") String useremail, @RequestParam("subject") String subject, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 
-	// fqa
-	@RequestMapping(value = "fqa", method = RequestMethod.GET)
-	public String fqa(HttpServletRequest request, HttpServletResponse response, ModelMap model, String redirect) 
+ << "/fqa", method = GET >>
+ fqa(HttpServletRequest request, HttpServletResponse response, ModelMap model, String redirect) 
 	
-	@RequestMapping(value = "upload-fqa", method = RequestMethod.POST)
-	public String UploadFQA(@RequestParam(value = "fqaPDF") CommonsMultipartFile fqaPDF, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ << "/upload-fqa", method = POST >>
+ UploadFQA(CommonsMultipartFile fqaPDF, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 
-	@RequestMapping(value = "downloadCSV")
-	public void downloadCSV(HttpServletRequest request, HttpServletResponse response) 
+ << "/downloadCSV", method = GET >>
+ + downloadCSV(HttpServletRequest request, HttpServletResponse response)
 
-	private boolean isAuthenticated(HttpServletRequest request) 
+ - isAuthenticated(HttpServletRequest request): boolean 
 	
-	private void checkAuth(HttpServletRequest request, HttpServletResponse response)
+ - checkAuth(HttpServletRequest request, HttpServletResponse response): void 
 	
-	private String authInitializeRedirect(HttpServletRequest request, HttpServletResponse response, ModelMap model, String redirect)
+ - authInitializeRedirect(HttpServletRequest request, HttpServletResponse response, ModelMap model, String redirect): String 
 
-	// initialize function
-	private void initialize(ModelMap model)
+ - initialize(ModelMap model): void 
 
-	private String initializeProfile(ModelMap model)
+ - initializeProfile(ModelMap model): String 
 
-	private String initializeSingleRoom(ModelMap model, String roomName, String redirect)
+ - initializeSingleRoom(ModelMap model, String roomName, String redirect): String 
 
-	private String initializeSingleService(ModelMap model, String servicename, String redirect)
+ - initializeSingleService(ModelMap model, String servicename, String redirect): String 
 	
-	private String initializeTracking(String tracking, HttpServletRequest request, HttpServletResponse response, ModelMap model)
+ - initializeTracking(String tracking, HttpServletRequest request, HttpServletResponse response, ModelMap model): String
 }
 
 
 
 
 @RestController
-@RequestMapping("/api")
+<<"/api">>
 public class RESTController {
 	
-	@Autowired
-	private HotelItemService hotelItemService;
+ - hotelItemService: HotelItemService 
 	
-	@Autowired
-	private UserService userService;
+ - userService: UserService 
 	
-	@CrossOrigin
-	@RequestMapping(value = "/rooms", method = RequestMethod.GET, produces = "application/json; charset=UTF-8")
-	public List<HotelRoom> getListRooms() 
+ << "//rooms", method = GET, produces = "application/json; charset=UTF-8")
+ + getListRooms(): List<HotelRoom> 
 	
-	@CrossOrigin
-	@RequestMapping(value = "/restaurant", method = RequestMethod.GET, produces = "application/json; charset=UTF-8")
-	public List<HotelService> getListServiceInRestaurant() 
+ << "//restaurant", method = GET, produces = "application/json; charset=UTF-8")
+ + getListServiceInRestaurant(): List<HotelService> 
+
+ << "//rooms/id/{id}", method = GET, produces = "application/json; charset=UTF-8")
+ + getRoom(int id): HotelRoom 
 	
-	@CrossOrigin
-	@RequestMapping(value = "/rooms/id/{id}", method = RequestMethod.GET, produces = "application/json; charset=UTF-8")
-	public HotelRoom getRoom(@PathVariable(value = "id") int id) 
+ << "//rooms/{name}", method = GET, produces = "application/json; charset=UTF-8")
+ + getRoomByName(String name): HotelRoom 
+
+ << "//rooms/page/{page}", method = GET, produces = "application/json; charset=UTF-8")
+ + getRoomByPage(int page): List<HotelRoom> 
 	
-	@CrossOrigin
-	@RequestMapping(value = "/rooms/{name}", method = RequestMethod.GET, produces = "application/json; charset=UTF-8")
-	public HotelRoom getRoomByName(@PathVariable(value = "name") String name) 
+ << "//rooms/all/quantity", method = GET, produces = "application/json; charset=UTF-8")
+ + getNumRoom(): long 
 	
-	@CrossOrigin
-	@RequestMapping(value = "/rooms/page/{page}", method = RequestMethod.GET, produces = "application/json; charset=UTF-8")
-	public List<HotelRoom> getRoomByPage(@PathVariable(value = "page") int page) 
+ << "//restaurant/{id}", method = GET, produces = "application/json; charset=UTF-8")
+ + getItemInRestaurant(int id): HotelService 
 	
-	@CrossOrigin
-	@RequestMapping(value = "/rooms/all/quantity", method = RequestMethod.GET, produces = "application/json; charset=UTF-8")
-	public long getNumRoom() 
+ << "//rooms/{name}", method = PUT, produces = "application/json; charset=UTF-8")
+ + bookRoom(String name, @RequestBody HotelRoom room): ResponseEntity<HotelRoom> 
 	
-	@CrossOrigin
-	@RequestMapping(value = "/restaurant/{id}", method = RequestMethod.GET, produces = "application/json; charset=UTF-8")
-	public HotelService getItemInRestaurant(@PathVariable(value = "id") int id)
+ << "//page-access-chart", method = GET, produces = "application/json; charset=UTF-8")
+ + getPageAccessChart(): List<PageAccessChartData> 
 	
-	@CrossOrigin
-	@RequestMapping(value = "/rooms/{name}", method = RequestMethod.PUT, produces = "application/json; charset=UTF-8")
-	public ResponseEntity<HotelRoom> bookRoom(@PathVariable(value = "name") String name, @RequestBody HotelRoom room) 
+ << "//page-access-chart/userIP/{userIP}", method = GET, produces = "application/json; charset=UTF-8")
+ + getPageAccessChartByIP(String userIP): List<PageAccessChartData> 
 	
-	@CrossOrigin
-	@RequestMapping(value = "/page-access-chart", method = RequestMethod.GET, produces = "application/json; charset=UTF-8")
-	public List<PageAccessChartData> getPageAccessChart() 
+ << "//page-access-chart/username/{username}", method = GET, produces = "application/json; charset=UTF-8")
+ + getPageAccessChartByUsername(String username): List<PageAccessChartData> 
 	
-	@CrossOrigin
-	@RequestMapping(value = "/page-access-chart/userIP/{userIP}", method = RequestMethod.GET, produces = "application/json; charset=UTF-8")
-	public List<PageAccessChartData> getPageAccessChartByIP(@PathVariable(value = "userIP") String userIP) 
-	
-	@CrossOrigin
-	@RequestMapping(value = "/page-access-chart/username/{username}", method = RequestMethod.GET, produces = "application/json; charset=UTF-8")
-	public List<PageAccessChartData> getPageAccessChartByUsername(@PathVariable(value = "username") String username)
-	
-	@CrossOrigin
-	@RequestMapping(value = "/country-chart", method = RequestMethod.GET, produces = "application/json; charset=UTF-8")
-	public List<CountryChartData> getCountryChartData()
+ << "//country-chart", method = GET, produces = "application/json; charset=UTF-8")
+ + getCountryChartData(): List<CountryChartData> 
 }

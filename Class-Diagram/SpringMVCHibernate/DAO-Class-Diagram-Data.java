@@ -1,82 +1,82 @@
 
 public interface ActivityDAO {
 
-    public List<Activity> getAllActivity();
-    public List<Activity> getAllActivityByUserName(String username);
-    public List<Activity> getNewListNotification();
-    public Activity getActivityBy(String id);
-    public Activity seenNotification(String id);
-    public Activity replyNotification(String id);
+ + getAllActivity(): List<Activity> 
+ + getAllActivityByUserName(String username): List<Activity> 
+ + getNewListNotification(): List<Activity> 
+ + getActivityBy(String id): Activity 
+ + seenNotification(String id): Activity 
+ + replyNotification(String id): Activity 
 }
 
 
 public interface AdminDAO {
 
-    public Administrator getAdminByUserName(String username);
-    public void updateAdmin(Administrator ad);
-    public void editProfileImg(String username, String img);
-    public void updatePassword(String username, String newpassword);
+ + getAdminByUserName(String username): Administrator 
+ + updateAdmin(Administrator ad): void 
+ + editProfileImg(String username, String img): void 
+ + updatePassword(String username, String newpassword): void 
 }
 
 
 public interface CustomerDAO {
 
-    public Customer getCustomerByUsername(String username);
-    public List<Customer> getAllCustomers();
-    public ActionTracking getActionTrackingByUsername(String username);  
-    public List<CustomerBehavior> getDataCollection();
-    public CustomerBehavior getOneDataCollection(String username);
+ + getCustomerByUsername(String username): Customer 
+ + getAllCustomers(): List<Customer> 
+ + getActionTrackingByUsername(String username): ActionTracking 
+ + getDataCollection(): List<CustomerBehavior> 
+ + getOneDataCollection(String username): CustomerBehavior 
 }
 
 
 public interface HotelItemDAO<T> {
 
-	public T getHotelItemByID(int id);
-	public T getHotelItemByName(String name);
-	public List<T> getAllHotelItems();
-	public List<T> getRelatedHotelItems(String type);
-	public String findAndAddNewItem(HotelItem newItem);
-	public void editImage(String name, String img, String img2);
-	public void deleteItem(int id);
-	public void updateItem(HotelItem item);
+ + getHotelItemByID(int id): T 
+ + getHotelItemByName(String name): T 
+ + getAllHotelItems(): List<T> 
+ + getRelatedHotelItems(String type): List<T> 
+ + findAndAddNewItem(HotelItem newItem): String 
+ + editImage(String name, String img, String img2): void 
+ + deleteItem(int id): void 
+ + updateItem(HotelItem item): void 
 }
 
 
 public interface RestaurantDAO {
 
-	public HotelService getHotelServiceByID(int id);
-	public HotelService getHotelServiceByName(String name);
-    public List<HotelService> getAllHotelServices();   
-    public List<HotelService> getRelatedHotelServices(String type);   
-    public String findAndAddNewService(HotelService newService);
-    public void updateService(HotelService service);
-	public void editImage(String name, String img, String img2);
-	public void deleteItem(int id);
+ + getHotelServiceByID(int id): HotelService 
+ + getHotelServiceByName(String name): HotelService 
+ + getAllHotelServices(): List<HotelService> 
+ + getRelatedHotelServices(String type): List<HotelService> 
+ + findAndAddNewService(HotelService newService): String 
+ + updateService(HotelService service): void 
+ + editImage(String name, String img, String img2): void 
+ + deleteItem(int id): void 
 }
 
 
 public interface RoomDAO {
 
-    public HotelRoom getRoomByID(int id);
-    public HotelRoom getRoomByName(String name);
-    public List<HotelRoom> getAllRooms();
-    public long getNumRooms();
-    public List<HotelRoom> getRoomByPage(int page);
-    public List<HotelRoom> getRelatedHotelRooms(String type);
-    public void updateRoom(HotelRoom room);
-    public String findAndAddNewRoom(HotelRoom newRoom);
-	public void editImage(String name, String img, String img2);
-	public void deleteItem(int id);
-	public void bookRoom(HotelRoom room);
+ + getRoomByID(int id): HotelRoom 
+ + getRoomByName(String name): HotelRoom 
+ + getAllRooms(): List<HotelRoom> 
+ + getNumRooms(): long 
+ + getRoomByPage(int page): List<HotelRoom> 
+ + getRelatedHotelRooms(String type): List<HotelRoom> 
+ + updateRoom(HotelRoom room): void 
+ + findAndAddNewRoom(HotelRoom newRoom): String 
+ + editImage(String name, String img, String img2): void 
+ + deleteItem(int id): void 
+ + bookRoom(HotelRoom room): void 
 }
 
 public interface TrackingDAO {
 	
-    public List<FollowUsers> getListFollowUsers();
-    public List<PageAccessChartData> getPageAccessChartData();
-    public List<PageAccessChartData> getPageAccessChartDataByIP(String ipaddress);
-    public List<PageAccessChartData> getPageAccessChartDataByUsername(String username);
-    public ExternalIP getExternalIPDetails(String external_ip_address);
-    public List<CountryChartData> getCountryChartData();
+ + getListFollowUsers(): List<FollowUsers> 
+ + getPageAccessChartData(): List<PageAccessChartData> 
+ + getPageAccessChartDataByIP(String ipaddress): List<PageAccessChartData> 
+ + getPageAccessChartDataByUsername(String username): List<PageAccessChartData> 
+ + getExternalIPDetails(String external_ip_address): ExternalIP 
+ + getCountryChartData(): List<CountryChartData> 
 }
 

@@ -1,38 +1,38 @@
 
 public abstract class AbstractModel {
 	
-	protected boolean checkNotNull(Object... objs) 
+ # checkNotNull(Object... objs): boolean 
 	
-	protected boolean checkNaturalNumber(int num) 
+ # checkNaturalNumber(int num): boolean 
 
-	protected boolean checkNaturalNumber(String str)
+ # checkNaturalNumber(String str): boolean 
 	
-	protected boolean checkNaturalNumber(int... numbers) 
+ # checkNaturalNumber(int... numbers): boolean 
 
-	protected boolean checkNaturalNumber(String... strings) 
+ # checkNaturalNumber(String... strings): boolean 
 	
-	protected boolean checkIsDateTimeFormat(String strDate) 
+ # checkIsDateTimeFormat(String strDate): boolean 
 	
-	protected boolean checkIsDateFormat(String... strDates) 
+ # checkIsDateFormat(String... strDates): boolean  
 	
-	public Date getToday() 
+ + getToday(): Date 
 	
-	public static Date getDateFormated(String strDate) 
+ + getDateFormated(String strDate): Date <<static>>
 	
-	public Date getDateTimeFormated(String date) 
+ + getDateTimeFormated(String date): Date 
 
-	public Date getICTDateTime(String dateTime) 
+ + getICTDateTime(String dateTime): Date 
 
-	public String getICTStrDateTime(String dateTime) 
+ + getICTStrDateTime(String dateTime): String 
 
 	// lowercase first character of string
-	protected String lowerFirstChar(String varname) 
+ # lowerFirstChar(String varname): String 
 
 	// uppercase first character of string
-	protected String upperFirstChar(String varname) 
+ # upperFirstChar(String varname): String 
     
     @Override
-    public abstract String toString();
+ + toString(): String <<abstract>>
 }
 
 
@@ -42,25 +42,25 @@ public abstract class MySQLAbstractModel extends AbstractModel {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name = "id", unique = true, nullable = false)
-	protected int id;
+ # id: int 
 	
 	@Column(name = "name", unique = true, nullable = false)
-	protected String name;
+ # name: String 
 
-    public int getId() 
+ + getId(): int 
 
-	public void setId(int id) 
+ + setId(int id): void 
 
-	public String getName() 
+ + getName(): String 
 
-	public void setName(String name) 
+ + setName(String name): void 
 	
-    public MySQLAbstractModel() {}
+ + MySQLAbstractModel() {}
     
-    public MySQLAbstractModel(int id, String name)
+ + MySQLAbstractModel(int id, String name)
 
 	@Override
-    public abstract String toString();
+ + toString(): String <<abstract>> 
 }
 
 
@@ -68,53 +68,51 @@ public abstract class MySQLAbstractModel extends AbstractModel {
 public class Administrator extends MySQLAbstractModel {
 
 	@Column(name = "username", unique = true, nullable = false, length = 255)
-	protected String username;
+ # username: String 
 	
 	@Column(name = "phone", nullable = false)
-	protected String phone;
+ # phone: String 
 	
 	@Column(name = "password", nullable = false)
-	protected String password;
+ # password: String 
 
 	@Column(name = "gender", nullable = false)
-	private String gender;
+ - gender: String 
 
 	@Column(name = "birthday", nullable = false)
-	private String birthday;
+ - birthday: String 
 
 	@Column(name = "img", nullable = false)
-	private String img;
+ - img: String 
 
-	public String getUsername() {
-		return username;
-	}
+ + getUsername(): String 
 
-	public void setUsername(String username)
+ + setUsername(String username): void 
 
-	public String getPassword()
+ + getPassword(): String 
 
-	public void setPassword(String password)
+ + setPassword(String password): void 
 	
-	public String getPhone()
+ + getPhone(): String 
 
-	public void setPhone(String phone)
+ + setPhone(String phone): void 
 
-	public String getBirthday()
+ + getBirthday(): String 
 
-	public void setBirthday(String birthday)
+ + setBirthday(String birthday): void 
 
-	public String getImg()
+ + getImg(): String 
 
-	public void setImg(String img)
+ + setImg(String img): void 
 
-	public String getGender()
+ + getGender(): String 
 
-	public void setGender(String gender) 
+ + setGender(String gender): void 
 
-	public boolean isEnoughInfor()
+ + isEnoughInfor(): boolean 
 
 	@Override
-	public String toString()
+ + toString(): String 
 }
 
 
@@ -122,73 +120,73 @@ public class Administrator extends MySQLAbstractModel {
 public abstract class HotelItem extends MySQLAbstractModel {
 
 	@Column(name = "price", nullable = false)
-    protected int price;
+ # price: int 
 	
 	@Column(name = "img", nullable = false)
-    protected String img;
+ # img: String 
 	
 	@Column(name = "img2", nullable = false)
-    protected String img2;
+ # img2: String 
 	
 	@Column(name = "details", nullable = false)
 	@Type(type="text")
-    protected String details;
+ # details: String 
 	
 	@Column(name = "type", nullable = false)
-    protected String type;
+ # type: String 
 	
 	@Column(name = "created_by", nullable = false)
-    protected String created_by;
+ # created_by: String 
 
 	@Column(name = "created_at", nullable = false)
-	protected String created_at;
+ # created_at: String 
 
-	public String getType() 
+ + getType(): String 
 
-    public void setType(String type)
+ + setType(String type): void 
 
-    public int getPrice()
+ + getPrice(): int 
 
-    public void setPrice(int price)
+ + setPrice(int price): void 
 
-    public String getImg() 
+ + getImg(): String 
 
-    public void setImg(String img)
+ + setImg(String img): void 
 
-    public String getImg2() 
+ + getImg2(): String 
 
-    public void setImg2(String img2)
+ + setImg2(String img2): void 
 
-    public String getDetails()
+ + getDetails(): String 
 
-    public void setDetails(String details)
+ + setDetails(String details): void 
 
-	public String getCreated_by()
+ + getCreated_by(): String 
 
-	public void setCreated_by(String created_by)
+ + setCreated_by(String created_by): void 
 
-	public String getCreated_at() 
+ + getCreated_at(): String 
 
-	public void setCreated_at(String created_at) 
+ + setCreated_at(String created_at): void 
 
-	protected void setInfor(String name, String type, int price, String img, String img2, String details) 
+ # setInfor(String name, String type, int price, String img, String img2, String details): void 
 	
-	public void setCreated() 
+ + setCreated() : void 
 	
-	public HotelItem() {}
+ + HotelItem() {}
 	
-    public HotelItem(String name, int price, String img, String img2, String details, String type, String created_by, String created_at) 
+ + HotelItem(String name, int price, String img, String img2, String details, String type, String created_by, String created_at) 
 	
-    public HotelItem(int id, String name, int price, String img, String img2, String details, String type, String created_by, String created_at) 
+ + HotelItem(int id, String name, int price, String img, String img2, String details, String type, String created_by, String created_at) 
 
-	public abstract void initializeSomeInfor();
+ + initializeSomeInfor(): void <<abstract>>
 
-	public abstract String getAbleToUpdate();
+ + getAbleToUpdate(): String  <<abstract>>;
     
-	public abstract void setNewInfor();
+ + setNewInfor(): void <<abstract >>;
 
 	@Override
-	public String toString() 
+ + toString(): String 
 }
 
 
@@ -196,109 +194,109 @@ public abstract class HotelItem extends MySQLAbstractModel {
 public class HotelRoom extends HotelItem {
 	
 	@Column(name = "size", nullable = false)
-	private int size;
+ - size: int 
 	
 	@Column(name = "numpeople", nullable = false)
-	private int numpeople;
+ - numpeople: int 
 	
 	@Column(name = "status", nullable = false)
-	private String status;
+ - status: String 
 	
 	@Column(name = "booked_by", nullable = true)
-	private String booked_by;
+ - booked_by: String 
 	
 	@Column(name = "amenities", nullable = false)
 	@Type(type="text")
-	private String amenities;
+ - amenities: String 
 	
 	@Column(name = "avgAminities", nullable = false)
-	private int avgAminities;
+ - avgAminities: int 
 	
 	@Column(name = "checkin", nullable = true)
-	private String checkin;
+ - checkin: String 
 	
 	@Column(name = "checkout", nullable = true)
-	private String checkout;
+ - checkout: String 
 	
 	@Column(name = "star", nullable = true)
-	private int star;
+ - star: int 
 	
 	@Column(name = "numvote", nullable = true)
-	private int numvote;
+ - numvote: int 
 
-	public int getSize() 
+ + getSize(): int 
 
-	public void setSize(int size) 
+ + setSize(int size): void 
 
-	public int getNumpeople() 
+ + getNumpeople(): int 
 
-	public void setNumpeople(int numpeople) 
+ + setNumpeople(int numpeople): void 
 
-	public String getStatus() 
+ + getStatus(): String 
 
-	public void setStatus(String status)
+ + setStatus(String status): void 
 
-	public String getAmenities() 
+ + getAmenities(): String 
 
-	public void setAmenities(String amenities) 
+ + setAmenities(String amenities): void 
 
-	public String getBooked_by() 
+ + getBooked_by(): String 
 
-	public void setBooked_by(String booked_by) 
+ + setBooked_by(String booked_by): void 
 
-	public String getCheckin() 
+ + getCheckin(): String 
 
-	public void setCheckin(String checkin) 
+ + setCheckin(String checkin): void 
 
-	public String getCheckout() 
+ + getCheckout(): String 
 
-	public void setCheckout(String checkout)
+ + setCheckout(String checkout): void 
 
-	public int getStar() 
+ + getStar(): int 
 
-	public void setStar(int star) 
+ + setStar(int star): void 
 
-	public int getNumvote() 
+ + getNumvote(): int 
 
-	public void setNumvote(int numvote) 
+ + setNumvote(int numvote): void 
 
-	public int getAvgAminities() 
+ + getAvgAminities(): int 
 
-	public void setAvgAminities(int avgAminities) 
-
-	@Override
-	public void initializeSomeInfor() 
+ + setAvgAminities(int avgAminities): void 
 
 	@Override
-	public void setNewInfor() 
-
-	private boolean isInvalidType() 
-
-	private boolean isInvalidStatus() 
-
-	private boolean isEnoughInfor() 
-
-	private boolean isNumberFormat() 
-
-	public boolean isvalidDate()
-
-	public boolean isCorrectRoomName() 
+ + initializeSomeInfor(): void 
 
 	@Override
-	public String getAbleToUpdate() 
+ + setNewInfor(): void 
 
-	public boolean allInforCorrect() 
+ - isInvalidType(): boolean 
+
+ - isInvalidStatus(): boolean 
+
+ - isEnoughInfor(): boolean 
+
+ - isNumberFormat(): boolean 
+
+ + isvalidDate(): boolean 
+
+ + isCorrectRoomName(): boolean 
+
+	@Override
+ + getAbleToUpdate(): String 
+
+ + allInforCorrect(): boolean 
 	
-	public boolean isReadyToBook() 
+ + isReadyToBook(): boolean 
 	
-	public HotelRoom() {}
+ + HotelRoom() {}
 	
-	public HotelRoom(String name, int price, String img, String img2, String details, String type, String created_by, String created_at, int size, int numpeople, String status, String amenities, String booked_by, int avgAminities, String checkin, String checkout, int star, int numvote) 
+ + HotelRoom(String name, int price, String img, String img2, String details, String type, String created_by, String created_at, int size, int numpeople, String status, String amenities, String booked_by, int avgAminities, String checkin, String checkout, int star, int numvote) 
 
-	public HotelRoom(int id, String name, int price, String img, String img2, String details, String type, String created_by, String created_at, int size, int numpeople, String status, String amenities, String booked_by, int avgAminities, String checkin, String checkout, int star, int numvote) 
+ + HotelRoom(int id, String name, int price, String img, String img2, String details, String type, String created_by, String created_at, int size, int numpeople, String status, String amenities, String booked_by, int avgAminities, String checkin, String checkout, int star, int numvote) 
 
 	@Override
-	public String toString() 
+ + toString(): String 
 	
 }
 
@@ -308,428 +306,428 @@ public class HotelRoom extends HotelItem {
 public class HotelService extends HotelItem {
 
 	@Column(name = "quantity", nullable = false)
-    private int quantity;
+ - quantity: int 
 	
 	@Column(name = "note", nullable = false)
-    private String note;
+ - note: String 
 	
 	@Column(name = "serveType", nullable = false)
-    private String serveType;
+ - serveType: String 
 	
 	@Column(name = "serveTime", nullable = false)
-    private String serveTime;
+ - serveTime: String 
 
-    public int getQuantity() 
+ + getQuantity(): int 
 
-    public void setQuantity(int quantity) 
+ + setQuantity(int quantity): void 
 
-    public String getNote()
+ + getNote(): String 
 
-    public void setNote(String note) 
+ + setNote(String note): void 
 
-    public String getServeType() 
+ + getServeType(): String 
 
-    public void setServeType(String serveType) 
+ + setServeType(String serveType): void 
 
-    public String getServeTime() 
+ + getServeTime(): String 
     
     @Override
-	public void setNewInfor() 
+ + setNewInfor(): void 
 
-    public void initializeServeTime() 
+ + initializeServeTime(): void 
 
-    private boolean isEnoughInfor() 
+ - isEnoughInfor(): boolean 
 
-	private boolean isNumberFormat() 
+ - isNumberFormat(): boolean 
 
     @Override
-    public void initializeSomeInfor() 
+ + initializeSomeInfor(): void 
 
-    private boolean isInvalidType() 
+ - isInvalidType(): boolean 
 
-    private boolean isInvalidServeType() 
+ - isInvalidServeType(): boolean 
     
     @Override
-    public String getAbleToUpdate() 
+ + getAbleToUpdate(): String 
 
-	public HotelService() 
+ + HotelService() 
 
-	public HotelService(int id, String name, int price, String img, String img2, String details, String type, String created_by, String created_at, int quantity, String note, String serveType, String serveTime) 
+ + HotelService(int id, String name, int price, String img, String img2, String details, String type, String created_by, String created_at, int quantity, String note, String serveType, String serveTime) 
 
-	public HotelService(String name, int price, String img, String img2, String details, String type, String created_by, String created_at, int quantity, String note, String serveType, String serveTime) 
+ + HotelService(String name, int price, String img, String img2, String details, String type, String created_by, String created_at, int quantity, String note, String serveType, String serveTime) 
 
-	public HotelService(int quantity, String note, String serveType, String serveTime) 
+ + HotelService(int quantity, String note, String serveType, String serveTime) 
 
 	@Override
-	public String toString() 
+ + toString(): String 
 }
 
 
 
 public abstract class MongoDbAbstractModel extends AbstractModel {
 	
-	protected String _id;
-	protected String name;
-	protected String created_at;
+ # _id: String 
+ # name: String 
+ # created_at: String 
 	
-	public String getId() 
+ + getId(): String 
 
-	public void setId(String id)
+ + setId(String id): void 
 
-	public String getName() 
+ + getName(): String 
 
-	public void setName(String name) 
+ + setName(String name): void 
 
-	public String getCreated_at() 
+ + getCreated_at(): String 
 
-	public void setCreated_at(String created_at) 
+ + setCreated_at(String created_at): void 
 
 	@Override
-	public abstract String toString();
+ + toString(): String <<abstract>>
 }
 
 
 public class Customer extends MongoDbAbstractModel {
 	
-	protected String username;
-	protected String phone;
-	protected String password;
-    private String address;
-    private int balance;
-    private List<Activity> activity = new ArrayList<>();
-    private List<String> dateVisit;
+ # username: String 
+ # phone: String 
+ # password: String 
+ - address: String 
+ - balance: int 
+ - activity: List<Activity> 
+ - dateVisit: List<String> 
     
-    public String getUsername() 
+ + getUsername(): String 
 
-    public void setUsername(String username) 
+ + setUsername(String username): void 
 
-    public String getPassword() 
+ + getPassword(): String 
 
-    public void setPassword(String password) 
+ + setPassword(String password): void 
 
-    public String getPhone() 
+ + getPhone(): String 
 
-    public void setPhone(String phone) 
+ + setPhone(String phone): void 
 
-    public int getBalance() 
+ + getBalance(): int 
 
-	public void setBalance(int balance) 
+ + setBalance(int balance): void 
 
-	public List<Activity> getActivity()
+ + getActivity(): List<Activity> 
 
-    public void setActivity(List<Activity> activity)
+ + setActivity(List<Activity> activity): void 
 
-    public String getAddress() 
+ + getAddress(): String 
 
-    public void setAddress(String address) 
+ + setAddress(String address): void 
 
-    public List<String> getDateVisit() 
+ + getDateVisit(): List<String> 
 
-    public void setDateVisit(List<String> dateVisit) 
+ + setDateVisit(List<String> dateVisit) : void 
 
 	@Override
-	public String toString() 
+ + toString(): String 
 }
 
 
 public class Activity extends MongoDbAbstractModel {
 
-    private String username;
-    private String click;
-    private String details;
-    private String note;
-    private String content;
-    private String response;
-    private String fullname;
-    private String email;
-    private String phone;
+ - username: String 
+ - click: String 
+ - details: String 
+ - note: String 
+ - content: String 
+ - response: String 
+ - fullname: String 
+ - email: String 
+ - phone: String 
 
-    public String getFullname() 
+ + getFullname(): String 
 
-    public void setFullname(String fullname) 
+ + setFullname(String fullname): void 
 
-    public String getEmail() 
+ + getEmail(): String 
 
-    public void setEmail(String email) 
+ + setEmail(String email): void 
 
-    public String getPhone() 
+ + getPhone(): String 
 
-    public void setPhone(String phone) 
+ + setPhone(String phone): void 
 
-    public String getDetails() 
+ + getDetails(): String 
 
-    public void setDetails(String details) 
+ + setDetails(String details): void 
 
-    public String getNote() 
+ + getNote(): String 
 
-    public void setNote(String note) 
+ + setNote(String note): void 
 
-    public String getUsername() 
+ + getUsername(): String 
 
-    public void setUsername(String username) 
+ + setUsername(String username): void 
 
-    public String getClick() {
+ + getClick(): String 
 
-    public void setClick(String click)
+ + setClick(String click): void 
 
-    public String getContent() 
+ + getContent(): String 
 
-    public void setContent(String content) 
+ + setContent(String content): void 
 
-    public String getResponse() 
+ + getResponse(): String 
 
-    public void setResponse(String response) 
+ + setResponse(String response): void 
     
-    public void setCustomerInfor(String email, String fullname, String phone) 
+ + setCustomerInfor(String email, String fullname, String phone): void 
 
-    public static class CompareDateTime implements Comparator<Activity> {
+ + class CompareDateTime implements Comparator<Activity> <<static>> {
         @Override
-        public int compare(Activity a1, Activity a2)
+     + compare(Activity a1, Activity a2): int 
     }
 
 	@Override
-	public String toString() 
+ + toString(): String 
 }
 
 
 
 public class LoginBean {
 
-    private String userName;
-    private String password;
+ - userName: String 
+ - password: String 
 
-    public String getUserName() 
+ + getUserName(): String 
 
-    public void setUserName(String userName)
+ + setUserName(String userName): void 
 
-    public String getPassword() 
+ + getPassword(): String 
 
-    public void setPassword(String password) 
+ + setPassword(String password): void 
 }
 
 
 
 public class ChangePasswordBean {
-	private String currentpassword;
-	private String newpassword;
-	private String confirm;
+ - currentpassword: String 
+ - newpassword: String 
+ - confirm: String 
 
-	public String getCurrentpassword() 
+ + getCurrentpassword() : String 
 
-	public void setCurrentpassword(String currentpassword) 
+ + setCurrentpassword(String currentpassword) : void 
 
-	public String getNewpassword()
+ + getNewpassword() : String 
 
-	public void setNewpassword(String newpassword) 
+ + setNewpassword(String newpassword) : void 
 
-	public String getConfirm() 
+ + getConfirm() : String 
 
-	public void setConfirm(String confirm) 
+ + setConfirm(String confirm) : void 
 	
-	public String getPWCheckingResult(String correctPassword) 
+ + getPWCheckingResult(String correctPassword) : String 
 	
-	public boolean isMatchPassword(String correctPassword) 
+ + isMatchPassword(String correctPassword) : boolean 
 	
-	public ChangePasswordBean() 
+ + ChangePasswordBean() 
 
-	public ChangePasswordBean(String currentpassword, String newpassword, String confirm) 
+ + ChangePasswordBean(String currentpassword, String newpassword, String confirm) 
 
 	@Override
-	public String toString()
+ + toString() : String 
 }
 
 
 
 public class ActionTracking {
 
-	private List<DataCollection> roomBooked;
-	private List<DataCollection> roomCanceled;
-	private List<Feedback> feedbackroom;
-	private List<Feedback> feedbackservice;
-	private double avgfeedbackRoom;
-	private double avgFeedbackSV;
+ - roomBooked: List<DataCollection> 
+ - roomCanceled: List<DataCollection> 
+ - feedbackroom: List<Feedback> 
+ - feedbackservice: List<Feedback> 
+ - avgfeedbackRoom: double 
+ - avgFeedbackSV: double 
 
-	public List<DataCollection> getRoomBooked() 
+ + getRoomBooked(): List<DataCollection> 
 
-	public void setRoomBooked(List<DataCollection> roomBooked) 
+ + setRoomBooked(List<DataCollection> roomBooked): void 
 
-	public List<DataCollection> getRoomCanceled() 
+ + getRoomCanceled() : List<DataCollection> 
 
-	public void setRoomCanceled(List<DataCollection> roomCanceled) 
+ + setRoomCanceled(List<DataCollection> roomCanceled) : void 
 
-	public List<Feedback> getFeedbackroom() 
+ + getFeedbackroom() : List<Feedback> 
 
-	public void setFeedbackroom(List<Feedback> feedbackroom) 
+ + setFeedbackroom(List<Feedback> feedbackroom) : void 
 	
-	public double getAvgfeedbackRoom() 
+ + getAvgfeedbackRoom() : double 
 
-	public void setAvgfeedbackRoom(double avgfeedbackRoom) 
+ + setAvgfeedbackRoom(double avgfeedbackRoom) : void 
 
-	public double getAvgFeedbackSV() 
+ + getAvgFeedbackSV() : double 
 
-	public void setAvgFeedbackSV(double avgFeedbackSV) 
+ + setAvgFeedbackSV(double avgFeedbackSV) : void 
 
-	public List<Feedback> getFeedbackservice() 
+ + getFeedbackservice() : List<Feedback> 
 
-	public void setFeedbackservice(List<Feedback> feedbackservice) 
+ + setFeedbackservice(List<Feedback> feedbackservice) : void 
 
-	public ActionTracking(List<DataCollection> roomBooked, List<DataCollection> roomCanceled, List<Feedback> feedbackroom, List<Feedback> feedbackservice, double avgfeedbackRoom, double avgFeedbackSV) 
+ + ActionTracking(List<DataCollection> roomBooked, List<DataCollection> roomCanceled, List<Feedback> feedbackroom, List<Feedback> feedbackservice, double avgfeedbackRoom, double avgFeedbackSV) 
 
 	@Override
-	public String toString() 
+ + toString() : String 
 }
 
 
 
 public class CountryChartData {
 
-	private String countryCode;
-	private String countryName;
-	private int visitTime;
+ - String countryCode;
+ - String countryName;
+ - int visitTime;
 
-	public String getCountryCode()
+ + String getCountryCode()
 
-	public void setCountryCode(String countryCode)
+ + void setCountryCode(String countryCode)
 
-	public String getCountryName() 
+ + String getCountryName() 
 
-	public void setCountryName(String countryName) 
+ + void setCountryName(String countryName) 
 
-	public int getVisitTime() 
+ + int getVisitTime() 
 
-	public void setVisitTime(int visitTime) 
+ + void setVisitTime(int visitTime) 
 
 	@Override
-	public String toString()
+ + String toString()
 }
 
 
 public class CustomerBehavior {
 
-	private Customer cus;
-	private List dateVisited;
-	private ActionTracking action;
+ - Customer cus;
+ - List dateVisited;
+ - ActionTracking action;
 
-	public Customer getCus() 
+ + Customer getCus() 
 
-	public void setCus(Customer cus) 
+ + void setCus(Customer cus) 
 
-	public List getDateVisited() 
+ + List getDateVisited() 
 
-	public void setDateVisited(List dateVisited) 
+ + void setDateVisited(List dateVisited) 
 
-	public ActionTracking getAction() 
+ + ActionTracking getAction() 
 
-	public void setAction(ActionTracking action) 
+ + void setAction(ActionTracking action) 
 	
-	public CustomerBehavior(Customer cus, List dateVisited, ActionTracking action) 
+ + CustomerBehavior(Customer cus, List dateVisited, ActionTracking action) 
 
-	public CustomerBehavior(Customer cus, ActionTracking action) 
+ + CustomerBehavior(Customer cus, ActionTracking action) 
 
 	@Override
-	public String toString() 
+ + String toString() 
 }
 
 
 
 public class DataCollection {
     
-    private String date;
-    private String data;
+ - date: String 
+ - data: String 
 
-    public String getDate() 
+ + getDate() : String 
 
-    public void setDate(String Date) 
+ + setDate(String Date) : void 
 
-    public String getData() 
+ + getData() : String 
 
-    public void setData(String data) 
+ + setData(String data) : void 
 
-    public DataCollection(String Date, String data) 
+ + DataCollection(String Date, String data) 
 
     @Override
-    public String toString() 
+ + toString() : String 
 }
 
 
 public class Feedback {
     
-    private String date;
-    private String room;
-    private int star;
-    private String feedback;
+ - date: String 
+ - room: String 
+ - star: int 
+ - feedback: String 
 
-    public String getDate() 
+ + getDate(): String 
 
-    public void setDate(String date) 
+ + setDate(String date) : void 
 
-    public String getRoom() 
+ + getRoom() : String 
 
-    public void setRoom(String room) 
+ + setRoom(String room) : void 
 
-    public int getStar() 
+ + getStar() : int 
 
-    public void setStar(int star) 
+ + setStar(int star) : void 
 
-    public String getFeedback() 
+ + getFeedback() : String 
 
-    public void setFeedback(String feedback) 
+ + setFeedback(String feedback) : void 
 
-    public Feedback(String date, int star, String feedback) 
+ + Feedback(String date, int star, String feedback) 
 
-	public Feedback(String date, String room, int star, String feedback) 
+ + Feedback(String date, String room, int star, String feedback) 
 
     @Override
-    public String toString() 
+ + toString() : String 
 }
 
 
 
 public class FollowUsers {
 
-	private String user_ip_address;
-	private String external_ip_address;
-	private String user_id;
-	private String username;
-	private String created_at;
-	private String page_access;
-	private int duration;
-	private String durationTime;
+ - user_ip_address: String 
+ - external_ip_address: String 
+ - user_id: String 
+ - username: String 
+ - created_at: String 
+ - page_access: String 
+ - duration: int 
+ - durationTime: String 
 	
-	public String getUser_ip_address() 
+ + getUser_ip_address(): String 
 
-	public void setUser_ip_address(String user_ip_address) 
+ + setUser_ip_address(String user_ip_address): void 
 
-	public String getPage_access() 
+ + getPage_access(): String 
 
-	public void setPage_access(String page_access) 
+ + setPage_access(String page_access): void 
 	
-	public String getExternal_ip_address() 
+ + getExternal_ip_address(): String 
 
-	public void setExternal_ip_address(String external_ip_address) 
+ + setExternal_ip_address(String external_ip_address): void 
 
-	public String getUser_id() 
+ + getUser_id(): String 
 	
-	public void setUser_id(String user_id) 
+ + setUser_id(String user_id): void 
 
-	public String getUsername() 
+ + getUsername(): String 
 
-	public void setUsername(String username) 
+ + setUsername(String username): void 
 
-	public int getDuration() 
+ + getDuration(): int 
 
-	public void setDuration(int duration) 
+ + setDuration(int duration): void 
 
-	public String getDurationTime() 
+ + getDurationTime(): String 
 
-	public void setDurationTime(String durationTime) 
+ + setDurationTime(String durationTime): void 
 
-	public String getCreated_at() 
+ + getCreated_at(): String 
 
-	public void setCreated_at(String created_at) 
+ + setCreated_at(String created_at): void  
 
 	@Override
-	public String toString() 
+ + toString(): String 
 }
 
 
@@ -737,89 +735,89 @@ public class FollowUsers {
 
 public class GeoLocation {
 
-    private String countryCode;
-    private String countryName;
-    private String postalCode;
-    private String city;
-    private String region;
-    private int areaCode;
-    private int dmaCode;
-    private int metroCode;
-    private float latitude;
-    private float longitude;
+ - countryCode: String 
+ - countryName: String 
+ - postalCode: String 
+ - city: String 
+ - region: String 
+ - areaCode: int 
+ - dmaCode: int 
+ - metroCode: int 
+ - latitude: float 
+ - longitude: float 
 
-    public GeoLocation(String countryCode, String countryName, String postalCode, String city, String region,
+ + GeoLocation(String countryCode, String countryName, String postalCode, String city, String region,
                        int areaCode, int dmaCode, int metroCode, float latitude, float longitude) 
 
-    public String getCountryCode() 
+ + getCountryCode(): String 
 
-	public void setCountryCode(String countryCode)
+ + setCountryCode(String countryCode): void 
 
-	public String getCountryName() 
+ + getCountryName(): String 
 
-	public void setCountryName(String countryName)
+ + setCountryName(String countryName): void 
 
-	public String getPostalCode() 
+ + getPostalCode(): String 
 
-	public void setPostalCode(String postalCode) 
+ + setPostalCode(String postalCode): void  
 
-	public String getCity() 
+ + getCity(): String 
 
-	public void setCity(String city) 
+ + setCity(String city): void 
 
-	public String getRegion() 
+ + getRegion(): String 
 
-	public void setRegion(String region) 
+ + setRegion(String region): void 
 
-	public int getAreaCode() 
+ + getAreaCode(): int 
 
-	public void setAreaCode(int areaCode) 
+ + setAreaCode(int areaCode): void 
 
-	public int getDmaCode() 
+ + getDmaCode(): int 
 
-	public void setDmaCode(int dmaCode) 
+ + setDmaCode(int dmaCode): void 
 
-	public int getMetroCode() 
+ + getMetroCode(): int 
 
-	public void setMetroCode(int metroCode) 
+ + setMetroCode(int metroCode): void 
 
-	public float getLatitude() 
+ + getLatitude(): float 
 
-	public void setLatitude(float latitude) 
+ + setLatitude(float latitude): void 
 
-	public float getLongitude() 
+ + getLongitude(): float 
 
-	public void setLongitude(float longitude) 
+ + setLongitude(float longitude): void 
 
 	@Override
-    public String toString() 
+ + toString(): String 
 }
 
 
 
 
 public class PageAccessChartData {
-	private String page_access;
-	private int visit_time;
-	private String color;
+ - page_access: String 
+ - visit_time: int 
+ - color: String 
 
-	public String getPage_access() 
+ + getPage_access(): String 
 
-	public void setPage_access(String page_access) 
+ + setPage_access(String page_access): void 
 
-	public int getVisit_time() 
+ + getVisit_time(): int 
 
-	public void setVisit_time(int visit_time) 
+ + setVisit_time(int visit_time): void 
 
-	public String getColor() 
+ + getColor(): String 
 
-	public void setColor(String color) 
+ + setColor(String color): void 
 	
-	private String getColorByVisitTime() 
+ - getColorByVisitTime(): String 
 
-	public PageAccessChartData(String page_access, int visit_time) 
+ + PageAccessChartData(String page_access, int visit_time) 
 	
 	@Override
-	public String toString() 
+ + toString(): String 
 }
 
