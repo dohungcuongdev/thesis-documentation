@@ -56,7 +56,7 @@ public class AppController {
  removeRoom(int id, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 
  << "/room-img-edited/{roomName}", method = POST >>
- roomImgEdited(CommonsMultipartFile img1, @RequestParam(value = "img2") CommonsMultipartFile img2, String roomName, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ roomImgEdited(CommonsMultipartFile img1, CommonsMultipartFile img2, String roomName, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 
  << {"/manage-restaurant", "/service", "/services"}, method = GET >>
  manageRestaurant(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
@@ -158,7 +158,7 @@ public class AppController {
  replyCancel(String id, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 
  << "/send-mail", method = POST >>
- sendMail(String id, @RequestParam("message") String message, @RequestParam("user-email") String useremail, @RequestParam("subject") String subject, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ sendMail(String id, String message, String useremail, String subject, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
 
  << "/fqa", method = GET >>
  fqa(HttpServletRequest request, HttpServletResponse response, ModelMap model, String redirect) 

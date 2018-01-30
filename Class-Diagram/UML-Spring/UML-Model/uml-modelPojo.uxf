@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>56</x>
+      <y>24</y>
+      <w>328</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>LoginBean 
+--
+ - userName: String 
+ - password: String 
+--
+ + getUserName(): String 
+ + setUserName(String userName): void 
+ + getPassword(): String 
+ + setPassword(String password): void </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>440</x>
+      <y>24</y>
+      <w>448</w>
+      <h>208</h>
+    </coordinates>
+    <panel_attributes>ChangePasswordBean 
+--
+ - currentpassword: String 
+ - newpassword: String 
+ - confirm: String 
+--
+ + getCurrentpassword() : String 
+ + setCurrentpassword(String currentpassword) : void 
+ + getNewpassword() : String 
+ + setNewpassword(String newpassword) : void 
+ + getConfirm() : String 
+ + setConfirm(String confirm) : void 
+ + getPWCheckingResult(String correctPassword) : String 
+ + isMatchPassword(String correctPassword) : boolean 
+ + ChangePasswordBean() 
+ + ChangePasswordBean(String currentpassword, String newpassword, String confirm) 
+ + toString() : String </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>56</x>
+      <y>640</y>
+      <w>328</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>CountryChartData 
+--
+ - countryCode: String 
+ - countryName: String 
+ - visitTime: int 
+--
+ + getCountryCode(): String 
+ + setCountryCode(String countryCode): void 
+ + getCountryName(): String 
+ + setCountryName(String countryName): void 
+ + getVisitTime(): int 
+ + setVisitTime(int visitTime): void 
+ + toString(): String </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>440</x>
+      <y>248</y>
+      <w>448</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>PageAccessChartData 
+--
+ - page_access: String 
+ - visit_time: int 
+ - color: String 
+--
+ + getPage_access(): String 
+ + setPage_access(String page_access): void 
+ + getVisit_time(): int 
+ + setVisit_time(int visit_time): void 
+ + getColor(): String 
+ + setColor(String color): void 
+ - getColorByVisitTime(): String 
+ + PageAccessChartData(String page_access, int visit_time) 
+ + toString(): String  </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>56</x>
+      <y>248</y>
+      <w>328</w>
+      <h>360</h>
+    </coordinates>
+    <panel_attributes>Tracking
+--
+ - user_ip_address: String 
+ - external_ip_address: String 
+ - user_id: String 
+ - username: String 
+ - created_at: String 
+ - page_access: String 
+ - duration: int 
+ - durationTime: String 
+--
+ + getUser_ip_address(): String 
+ + setUser_ip_address(String user_ip_address): void 
+ + getPage_access(): String 
+ + setPage_access(String page_access): void 
+ + getExternal_ip_address(): String 
+ + setExternal_ip_address(String external_ip_address): void 
+ + getUser_id(): String 
+ + setUser_id(String user_id): void 
+ + getUsername(): String 
+ + setUsername(String username): void 
+ + getDuration(): int 
+ + setDuration(int duration): void 
+ + getDurationTime(): String 
+ + setDurationTime(String durationTime): void 
+ + getCreated_at(): String 
+ + setCreated_at(String created_at): void  
+ + toString(): String 
+ </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>440</x>
+      <y>456</y>
+      <w>448</w>
+      <h>472</h>
+    </coordinates>
+    <panel_attributes>GeoLocation 
+--
+ - countryCode: String 
+ - countryName: String 
+ - postalCode: String 
+ - city: String 
+ - region: String 
+ - areaCode: int 
+ - dmaCode: int 
+ - metroCode: int 
+ - latitude: float 
+ - longitude: float  
+--
+ + GeoLocation(String countryCode, String countryName, String postalCode, String city, 
+ String region, int areaCode, int dmaCode, int metroCode, float latitude, float longitude) 
+ + getCountryCode(): String 
+ + setCountryCode(String countryCode): void 
+ + getCountryName(): String 
+ + setCountryName(String countryName): void 
+ + getPostalCode(): String 
+ + setPostalCode(String postalCode): void  
+ + getCity(): String 
+ + setCity(String city): void 
+ + getRegion(): String 
+ + setRegion(String region): void 
+ + getAreaCode(): int 
+ + setAreaCode(int areaCode): void 
+ + getDmaCode(): int 
+ + setDmaCode(int dmaCode): void 
+ + getMetroCode(): int 
+ + setMetroCode(int metroCode): void 
+ + getLatitude(): float 
+ + setLatitude(float latitude): void 
+ + getLongitude(): float 
+ + setLongitude(float longitude): void 
+ + toString(): String </panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

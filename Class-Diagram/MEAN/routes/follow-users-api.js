@@ -1,26 +1,22 @@
-var express = require('express');
-var router = express.Router();
-var ctrl = require('../controller/app-controller');
+ - ctrl: controller
 
-router.get('/', ctrl.getFollowUser);
-router.get('/:id', ctrl.getFollowUserByID);
-router.get('/page/:page', ctrl.getFollowUserByPage);
-router.get('/count/page', ctrl.getNumPageTracking);
-router.get('/sort/:field_name', ctrl.getSortedTrackingData);
-router.get('/:fieldname/:sort/:page', ctrl.getSortedTrackingData2);
-router.get('/search/total-page/:fieldname/:keyword', ctrl.searchTotalPage);
-router.get('/search/all/:fieldname/:keyword/:sort/:page', ctrl.searchTrackingData);
-router.get('/userIP/:userIP', ctrl.getFollowUserByUserIP);
-router.get('/externalIP/:externalIP', ctrl.getExternalIP);
-router.get('/country/chart-data', ctrl.getCountryChartData);
-router.get('/statistics/ExternalIP', ctrl.getExternalIPStatistics);
-router.get('/statistics/UserIP', ctrl.getIPStatistics);
-router.get('/statistics/Username', ctrl.getUsernameStatistics);
-router.get('/statistics/PageAccess', ctrl.getPageAccessStatistics);
-router.get('/statistics/PageAccess/userIP/:userIP', ctrl.getPageAccessByIP);
-router.get('/statistics/PageAccess/username/:username', ctrl.getPageAccessByUsername);
-router.delete('/:id', ctrl.deleteFollowUser);
-router.post('/', ctrl.postFollowUser);
-router.get('/room/suggest-room', ctrl.getRoomSuggestion);
-
-module.exports = router;
+- getFollowUser(): GET URL('/');
+- getFollowUserByID(id): GET URL('/:id');
+- getFollowUserByPage(page): GET URL('/page/:page');
+- getNumPageTracking(): GET URL('/count/page');
+- getSortedTrackingData(field_name): GET URL('/sort/:field_name');
+- getSortedTrackingData2(fieldname, sortOrder, page): GET URL('/:fieldname/:sort/:page');
+- searchTotalPage(fieldname, keyword): GET URL('/search/total-page/:fieldname/:keyword');
+- searchTrackingData(keyword, sortOrder, page): GET URL('/search/all/:fieldname/:keyword/:sort/:page');
+- getFollowUserByUserIP(userIP): GET URL('/userIP/:userIP');
+- getExternalIP(externalIP): GET URL('/externalIP/:externalIP');
+- getCountryChartData(): GET URL('/country/chart-data');
+- getExternalIPStatistics(): GET URL('/statistics/ExternalIP');
+- getIPStatistics(): GET URL('/statistics/UserIP');
+- getUsernameStatistics(): GET URL('/statistics/Username');
+- getPageAccessStatistics(): GET URL('/statistics/PageAccess');
+- getPageAccessByIP(userIP): GET URL('/statistics/PageAccess/userIP/:userIP');
+- getPageAccessByUsername(username): GET URL('/statistics/PageAccess/username/:username');
+- deleteFollowUser(id): DELETE URL ('/:id');
+- postFollowUser(): POST URL('/');
+- getRoomSuggestion(): GET URL('/room/suggest-room');

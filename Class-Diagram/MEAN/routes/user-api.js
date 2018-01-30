@@ -1,10 +1,6 @@
-var express = require('express');
-var router = express.Router();
-var ctrl = require('../controller/app-controller');
+ - ctrl: controller
 
-router.get('/:id', ctrl.getUserByID);
-router.get('/username/:username', ctrl.GetUserByUsername);
-router.get('/', ctrl.getUser);
-router.put('/:id', ctrl.putUser);
-
-module.exports = router;
+ - getUserByID(id): GET URL('/:id');
+ - GetUserByUsername(username): GET URL('/username/:username');
+ - getUser(): GET URL('/');
+ - putUser(id): PUT URL('/:id');

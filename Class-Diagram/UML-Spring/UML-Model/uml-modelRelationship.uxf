@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>328</x>
+      <y>0</y>
+      <w>328</w>
+      <h>264</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;abstract&gt;&gt;
+AbstractModel 
+--
+
+--
+
+ # checkNotNull(Object... objs): boolean 
+ # checkNaturalNumber(int num): boolean 
+ # checkNaturalNumber(String str): boolean 
+ # checkNaturalNumber(int... numbers): boolean 
+ # checkNaturalNumber(String... strings): boolean 
+ # checkIsDateTimeFormat(String strDate): boolean 
+ # checkIsDateFormat(String... strDates): boolean  
+ + getToday(): Date 
+ + getDateFormated(String strDate): Date &lt;&lt;static&gt;&gt;
+ + getDateTimeFormated(String date): Date 
+ + getICTDateTime(String dateTime): Date 
+ + getICTStrDateTime(String dateTime): String 
+ # lowerFirstChar(String varname): String 
+ # upperFirstChar(String varname): String 
+ + toString(): String &lt;&lt;abstract&gt;&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>64</x>
+      <y>296</y>
+      <w>328</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;abstract&gt;&gt;
+MongoDbAbstractModel 
+--
+ # _id: String 
+ # name: String 
+ # created_at: String 
+--
+ + getId(): String 
+ + setId(String id): void 
+ + getName(): String 
+ + setName(String name): void 
+ + getCreated_at(): String 
+ + setCreated_at(String created_at): void 
+ + toString(): String &lt;&lt;abstract&gt;&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>544</x>
+      <y>296</y>
+      <w>328</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;abstract&gt;&gt;
+SQLAbstractModel
+--
+ # id: int 
+ # name: String 
+--
+ + getId(): int 
+ + setId(int id): void 
+ + getName(): String 
+ + setName(String name): void 
+ + MySQLAbstractModel() {}
+ + MySQLAbstractModel(int id, String name)
+ + toString(): String &lt;&lt;abstract&gt;&gt; </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>520</y>
+      <w>224</w>
+      <h>312</h>
+    </coordinates>
+    <panel_attributes>Customer
+--
+ - username: String 
+ - phone: String 
+ - password: String 
+ - address: String 
+ - balance: int 
+ - activity: List&lt;Activity&gt; 
+ - dateVisit: List&lt;String&gt; 
+--
+ + getUsername(): String 
+ + setUsername(String username): void 
+ + getPassword(): String 
+ + setPassword(String password): void 
+ + getPhone(): String 
+ + setPhone(String phone): void 
+ + getBalance(): int 
+ + setBalance(int balance): void 
+ + getActivity(): List&lt;Activity&gt; 
+ + setActivity(List&lt;Activity&gt; activity): void 
+ + getAddress(): String 
+ + setAddress(String address): void 
+ + getDateVisit(): List&lt;String&gt; 
+ + setDateVisit(List&lt;String&gt; dateVisit) : void 
+ + toString(): String  </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>504</x>
+      <y>480</y>
+      <w>208</w>
+      <h>288</h>
+    </coordinates>
+    <panel_attributes>Admin
+--
+ - username: String 
+ - phone: String 
+ - password: String 
+ - gender: String 
+ - birthday: String
+ - img: String 
+--
+ + getUsername(): String 
+ + setUsername(String username): void 
+ + getPassword(): String 
+ + setPassword(String password): void 
+ + getPhone(): String 
+ + setPhone(String phone): void 
+ + getBirthday(): String 
+ + setBirthday(String birthday): void 
+ + getImg(): String 
+ + setImg(String img): void 
+ + getGender(): String 
+ + setGender(String gender): void 
+ + isEnoughInfor(): boolean
+ + toString(): String  
+ </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>216</x>
+      <y>256</y>
+      <w>224</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>260.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>544</x>
+      <y>256</y>
+      <w>184</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;210.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>80</x>
+      <y>464</y>
+      <w>120</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>584</x>
+      <y>448</y>
+      <w>112</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>120.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>248</x>
+      <y>264</y>
+      <w>80</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>extends
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>664</x>
+      <y>264</y>
+      <w>80</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>extends
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>64</x>
+      <y>488</y>
+      <w>80</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>extends
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>552</x>
+      <y>456</y>
+      <w>80</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>extends
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>240</x>
+      <y>520</y>
+      <w>256</w>
+      <h>440</h>
+    </coordinates>
+    <panel_attributes>Activity
+--
+ - username: String 
+ - click: String 
+ - details: String 
+ - note: String 
+ - content: String 
+ - response: String 
+ - fullname: String 
+ - email: String 
+ - phone: String  
+--
+ + getFullname(): String 
+ + setFullname(String fullname): void 
+ + getEmail(): String 
+ + setEmail(String email): void 
+ + getPhone(): String 
+ + setPhone(String phone): void 
+ + getDetails(): String 
+ + setDetails(String details): void 
+ + getNote(): String 
+ + setNote(String note): void 
+ + getUsername(): String 
+ + setUsername(String username): void 
+ + getClick(): String 
+ + setClick(String click): void 
+ + getContent(): String 
+ + setContent(String content): void 
+ + getResponse(): String 
+ + setResponse(String response): void 
+ + toString(): String
+ + setCustomerInfor(String email, String fullname, String phone): void 
+ 
+ + class CompareDateTime &lt;&lt;static&gt;&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>752</x>
+      <y>480</y>
+      <w>208</w>
+      <h>424</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;abstract&gt;&gt;
+HotelItem
+--
+ # price: int 
+ # img: String 
+ # img2: String 
+ # details: String 
+ # type: String 
+ # created_by: String 
+ # created_at: String  
+--
+ + getType(): String 
+ + setType(String type): void 
+ + getPrice(): int 
+ + setPrice(int price): void 
+ + getImg(): String 
+ + setImg(String img): void 
+ + getImg2(): String 
+ + setImg2(String img2): void 
+ + getDetails(): String 
+ + setDetails(String details): void 
+ + getCreated_by(): String 
+ + setCreated_by(String created_by): void 
+ + getCreated_at(): String 
+ + setCreated_at(String created_at): void 
+ # setInfor(String name, String type, int price, String img, String img2, String details): void 
+ + setCreated() : void 
+ + HotelItem() {}
+ + HotelItem(String name, int price, String img, String img2, String details, String type, String created_by, String created_at) 
+ + HotelItem(int id, String name, int price, String img, String img2, String details, String type, String created_by, String created_at) 
+ + initializeSomeInfor(): void &lt;&lt;abstract&gt;&gt;
+ + getAbleToUpdate(): String  &lt;&lt;abstract&gt;&gt;;
+ + setNewInfor(): void &lt;&lt;abstract &gt;&gt;;
+ + toString(): String </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>264</x>
+      <y>464</y>
+      <w>104</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>320</x>
+      <y>480</y>
+      <w>80</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>extends
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>824</x>
+      <y>456</y>
+      <w>80</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>extends
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>736</x>
+      <y>448</y>
+      <w>144</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;160.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>536</x>
+      <y>920</y>
+      <w>344</w>
+      <h>704</h>
+    </coordinates>
+    <panel_attributes>HotelRoom
+--
+ - price: int 
+ - img: String 
+ - img2: String 
+ - details: String 
+ - type: String 
+ - created_by: String 
+ - created_at: String  
+--
+ + getSize(): int 
+ + setSize(int size): void 
+ + getNumpeople(): int 
+ + setNumpeople(int numpeople): void 
+ + getStatus(): String 
+ + setStatus(String status): void 
+ + getAmenities(): String 
+ + setAmenities(String amenities): void 
+ + getBooked_by(): String 
+ + setBooked_by(String booked_by): void 
+ + getCheckin(): String 
+ + setCheckin(String checkin): void 
+ + getCheckout(): String 
+ + setCheckout(String checkout): void 
+ + getStar(): int 
+ + setStar(int star): void 
+ + getNumvote(): int 
+ + setNumvote(int numvote): void 
+ + getAvgAminities(): int 
+ + setAvgAminities(int avgAminities): void 
+ + initializeSomeInfor(): void 
+ + setNewInfor(): void 
+ - isInvalidType(): boolean 
+ - isInvalidStatus(): boolean 
+ - isEnoughInfor(): boolean 
+ - isNumberFormat(): boolean 
+ + isvalidDate(): boolean 
+ + isCorrectRoomName(): boolean
+ + getAbleToUpdate(): String 
+ + allInforCorrect(): boolean 
+ + isReadyToBook(): boolean 
+ + HotelRoom()
+ + HotelRoom(String name, int price, 
+ String img, String img2, String details, 
+ String type, String created_by, 
+ String created_at, int size, int numpeople, 
+ String status, String amenities, 
+ String booked_by, int avgAminities, 
+ String checkin, String checkout, 
+ int star, int numvote) 
+ + HotelRoom(int id, String name, int price, 
+ String img, String img2, String details, String type,
+ String created_by, String created_at, int size, int numpeople, 
+ String status, String amenities, String booked_by, int avgAminities, 
+ String checkin, String checkout, int star, int numvote) 
+ + toString(): String </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>896</x>
+      <y>920</y>
+      <w>240</w>
+      <h>520</h>
+    </coordinates>
+    <panel_attributes>HotelService
+--
+ - quantity: int 
+ - note: String 
+ - serveType: String 
+ - serveTime: String  
+--
+ + getQuantity(): int 
+ + setQuantity(int quantity): void 
+ + getNote(): String 
+ + setNote(String note): void 
+ + getServeType(): String 
+ + setServeType(String serveType): void 
+ + getServeTime(): String 
+ + setNewInfor(): void 
+ + initializeServeTime(): void 
+ - isEnoughInfor(): boolean 
+ - isNumberFormat(): boolean 
+ + initializeSomeInfor(): void 
+ - isInvalidType(): boolean 
+ - isInvalidServeType(): boolean 
+ + getAbleToUpdate(): String 
+ + HotelService() 
+ 
+ + HotelService(int id, String name,
+ int price, String img, String img2,
+ String details, String type, String created_by, 
+ String created_at, int quantity, String note,
+String serveType, String serveTime) 
+ 
+ + HotelService(String name, int price, 
+ String img, String img2, String details, 
+ String type, String created_by, 
+ String created_at, int quantity, 
+ String note, String serveType,
+ String serveTime) 
+
+ + HotelService(int quantity, String note,
+ String serveType, String serveTime) 
+
+ + toString(): String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>680</x>
+      <y>896</y>
+      <w>168</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>190.0;10.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>888</x>
+      <y>896</y>
+      <w>144</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;160.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>984</x>
+      <y>896</y>
+      <w>80</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>extends
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>704</x>
+      <y>896</y>
+      <w>80</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>extends
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>864</y>
+      <w>224</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>CustomerWithBehavior
+--
+ - customer: Customer 
+ - dateVisited: List 
+ - action: ActionTracking 
+--
+ + getCustomer(): Customer
+ + setCus(Customer customer): void 
+ + getDateVisited(): List 
+ + setDateVisited(List dateVisited): void 
+ + getAction(): ActionTracking 
+ + setAction(ActionTracking action): void 
+ + CustomerBehavior(Customer customer, 
+   List dateVisited, ActionTracking action)
+ + CustomerBehavior(Customer customer, 
+   ActionTracking action) 
+ + toString(): String </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>96</x>
+      <y>1296</y>
+      <w>336</w>
+      <h>328</h>
+    </coordinates>
+    <panel_attributes>ActionTracking
+--
+ - roomBooked: List&lt;DataCollection&gt; 
+ - roomCanceled: List&lt;DataCollection&gt; 
+ - feedbackroom: List&lt;Feedback&gt; 
+ - feedbackservice: List&lt;Feedback&gt; 
+ - avgfeedbackRoom: double 
+ - avgFeedbackSV: double 
+--
+ + getRoomBooked(): List&lt;DataCollection&gt; 
+ + setRoomBooked(List&lt;DataCollection&gt; roomBooked): void 
+ + getRoomCanceled() : List&lt;DataCollection&gt; 
+ + setRoomCanceled(List&lt;DataCollection&gt; roomCanceled) : void 
+ + getFeedbackroom() : List&lt;Feedback&gt; 
+ + setFeedbackroom(List&lt;Feedback&gt; feedbackroom) : void 
+ + getAvgfeedbackRoom() : double 
+ + setAvgfeedbackRoom(double avgfeedbackRoom) : void 
+ + getAvgFeedbackSV() : double 
+ + setAvgFeedbackSV(double avgFeedbackSV) : void 
+ + getFeedbackservice() : List&lt;Feedback&gt; 
+ + setFeedbackservice(List&lt;Feedback&gt; feedbackservice) : void 
+ + ActionTracking(List&lt;DataCollection&gt; roomBooked, 
+ List&lt;DataCollection&gt; roomCanceled, 
+ List&lt;Feedback&gt; feedbackroom, List&lt;Feedback&gt; feedbackservice,
+ double avgfeedbackRoom, double avgFeedbackSV) 
+ + toString() : String </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>296</x>
+      <y>1000</y>
+      <w>216</w>
+      <h>248</h>
+    </coordinates>
+    <panel_attributes>Feedback 
+--
+ - date: String 
+ - room: String 
+ - star: int 
+ - feedback: String 
+--
+ + getDate(): String 
+ + setDate(String date) : void 
+ + getRoom() : String 
+ + setRoom(String room) : void 
+ + getStar() : int 
+ + setStar(int star) : void 
+ + getFeedback() : String 
+ + setFeedback(String feedback) : void 
+ + Feedback(String date, int star, 
+ String feedback) 
+ + Feedback(String date, String room, 
+ int star, String feedback) 
+ + toString() : String </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>96</x>
+      <y>824</y>
+      <w>24</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>304</x>
+      <y>1240</y>
+      <w>112</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;70.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>64</x>
+      <y>1096</y>
+      <w>216</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>DataCollection 
+--
+ - date: String 
+ - data: String
+--
+
+ + getDate() : String 
+ + setDate(String Date) : void 
+ + getData() : String 
+ + setData(String data) : void 
+ + DataCollection(String Date, String data) 
+ + toString() : String </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>152</x>
+      <y>1240</y>
+      <w>96</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>100.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>24</x>
+      <y>1072</y>
+      <w>88</w>
+      <h>416</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;500.0;90.0;500.0</additional_attributes>
+  </element>
+</diagram>

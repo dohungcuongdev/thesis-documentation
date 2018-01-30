@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>20</y>
+      <w>420</w>
+      <h>820</h>
+    </coordinates>
+    <panel_attributes>AppData
+--
+ + EMAIL :String  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt;
+ + AUTHENTICATION :String  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt;
+ + MAIL_HOST :String  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt;
+ + MAIL_SMTP_PORT :String  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt;
+ + MAIL_SMTP_AUTH :String  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt;
+ + MAIL_SMTP_STARTTLS_ENABLE :String  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt;
+ + MAIL_SMTP_SSS_TRUST :String  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt;
+ + AUTH_FAIL :String  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt;
+ + WRONG_EMAIL_ADDRESS :String  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt;
+ + ERROR_MESSAGE :String  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt;
+ + EMAIL_SENT :String  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt;
+ + EMAIL_NO_SUBJECT_MES :String  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt;
+ + INFOR_NOT_ENOUGH :String  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt;
+ + WRONG_ROOM_NAME :String  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt;
+ + WRONG_NUMBER_FORMAT_ROOM :String  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt;
+ + WRONG_TYPE_ROOM :String  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt;
+ + WRONG_STATUS_ROOM :String  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt;
+ + WRONG_CHECKIN_CHECKOUT :String  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt;
+ + ABLE_TO_EDIT :String  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt;
+ + ABLE_TO_ADD :String  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt;
+ + EDITSUCCESS :String  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt;
+ + ERROR :String  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt;
+ + HEADERKEY :String  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt;
+ + CSV_FORMAT :String  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt;
+ + CSV_FILENAME :String  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt;
+ + HEADERCSV :String[]  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt;
+ + NO_FILE_CHOSEN :String  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt;
+ + NOT_PDF :String  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt;
+ + PDF_RESOURCES :String  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt;
+ + UPLOAD_SUCCESS :String  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt;
+ + DATE_FORMAT: String  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt;
+ + IMAGE_RESOURCES :String  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt;
+ + ROOM_TYPES : List&lt;String&gt;  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt; 
+ + ROOM_STATUS : List&lt;String&gt;  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt; 
+ + SERVICE_TYPES : List&lt;String&gt;  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt; 
+ + MEALS_TYPES : List&lt;String&gt;  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt; 
+ + MEALS_TIME : List&lt;String&gt;  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt; 
+ + WRONG_NUMBER_FORMAT_SERVICE :String  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt;
+ + WRONG_TYPE_SERVICE :String  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt;
+ + INVALID_SERVICE_TYPE :String  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt;
+ + ACTIVITY :String[]  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt;
+ + REUSE_STRING = :String[]  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt;
+ + ROOM_DEFAULT_IMG :String[]  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt;
+ + RESTAURANT_DEFAULT_IMG :String[]  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt;
+ + EMAIL_TEMPLATE_1 = :String[]  &lt;&lt;static&gt;&gt;  &lt;&lt;final&gt;&gt;
+    
+ + admin: Administrator &lt;&lt;static&gt;&gt; 
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>480</x>
+      <y>20</y>
+      <w>420</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>APIData
+--
+ + USER_API: String &lt;&lt;static&gt;&gt; &lt;&lt;final&gt;&gt;
+ + USER_USERNAME_API: String &lt;&lt;static&gt;&gt; &lt;&lt;final&gt;&gt;
+ + ACTIVITY_API: String &lt;&lt;static&gt;&gt; &lt;&lt;final&gt;&gt;
+ + ACTIVITY_USERNAME_API: String &lt;&lt;static&gt;&gt; &lt;&lt;final&gt;&gt;
+ + ACTIVITY_NO_RESPONSE_API: String &lt;&lt;static&gt;&gt; &lt;&lt;final&gt;&gt;
+ + SEEN_NOTIFICATION_API: String &lt;&lt;static&gt;&gt; &lt;&lt;final&gt;&gt;
+ + REPLY_NOTIFICATION_API: String &lt;&lt;static&gt;&gt; &lt;&lt;final&gt;&gt;
+ + EXTERNAL_IP_DETAILS_API: String &lt;&lt;static&gt;&gt; &lt;&lt;final&gt;&gt;
+ + FOLLOW_USERS_API: String &lt;&lt;static&gt;&gt; &lt;&lt;final&gt;&gt;
+ + PAGE_ACCESS_API: String &lt;&lt;static&gt;&gt; &lt;&lt;final&gt;&gt;
+ + PAGE_ACCESS_USERIP_API: String &lt;&lt;static&gt;&gt; &lt;&lt;final&gt;&gt;
+ + PAGE_ACCESS_USERNAME_API: String &lt;&lt;static&gt;&gt; &lt;&lt;final&gt;&gt;
+ + EXTERNAL_IP_API: String &lt;&lt;static&gt;&gt; &lt;&lt;final&gt;&gt;
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>0</y>
+      <w>700</w>
+      <h>650</h>
+    </coordinates>
+    <panel_attributes>RESTController
+&lt;&lt; mapping URL: "/api" &gt;&gt; 
+--
+ - hotelItemService: HotelItemService 
+ - userService: UserService 
+--
+ &lt;&lt; "/rooms", method = GET, produces = "application/json; charset=UTF-8")
+ + getListRooms(): List&lt;HotelRoom&gt; 
+	
+ &lt;&lt; "/restaurant", method = GET, produces = "application/json; charset=UTF-8")
+ + getListServiceInRestaurant(): List&lt;HotelService&gt; 
+
+ &lt;&lt; "/rooms/id/{id}", method = GET, produces = "application/json; charset=UTF-8")
+ + getRoom(int id): HotelRoom 
+	
+ &lt;&lt; "/rooms/{name}", method = GET, produces = "application/json; charset=UTF-8")
+ + getRoomByName(String name): HotelRoom 
+
+ &lt;&lt; "/rooms/page/{page}", method = GET, produces = "application/json; charset=UTF-8")
+ + getRoomByPage(int page): List&lt;HotelRoom&gt; 
+	
+ &lt;&lt; "/rooms/all/quantity", method = GET, produces = "application/json; charset=UTF-8")
+ + getNumRoom(): long 
+	
+ &lt;&lt; "/restaurant/{id}", method = GET, produces = "application/json; charset=UTF-8")
+ + getItemInRestaurant(int id): HotelService 
+	
+ &lt;&lt; "/rooms/{name}", method = PUT, produces = "application/json; charset=UTF-8")
+ + bookRoom(String name, @RequestBody HotelRoom room): ResponseEntity&lt;HotelRoom&gt; 
+	
+ &lt;&lt; "/page-access-chart", method = GET, produces = "application/json; charset=UTF-8")
+ + getPageAccessChart(): List&lt;PageAccessChartData&gt; 
+	
+ &lt;&lt; "/page-access-chart/userIP/{userIP}", method = GET, produces = "application/json; charset=UTF-8")
+ + getPageAccessChartByIP(String userIP): List&lt;PageAccessChartData&gt; 
+	
+ &lt;&lt; "/page-access-chart/username/{username}", method = GET, produces = "application/json; charset=UTF-8")
+ + getPageAccessChartByUsername(String username): List&lt;PageAccessChartData&gt; 
+
+ &lt;&lt; "/country-chart", method = GET, produces = "application/json; charset=UTF-8")
+ + getCountryChartData(): List&lt;CountryChartData&gt; </panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

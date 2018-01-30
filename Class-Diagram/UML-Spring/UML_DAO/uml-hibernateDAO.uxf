@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>0</y>
+      <w>410</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+HotelRoomDAO
+--
+
+--
+
+ + getRoomByID(int id): HotelRoom 
+ + getRoomByName(String name): HotelRoom 
+ + getAllRooms(): List&lt;HotelRoom&gt; 
+ + getNumRooms(): long 
+ + getRoomByPage(int page): List&lt;HotelRoom&gt; 
+ + getRelatedHotelRooms(String type): List&lt;HotelRoom&gt; 
+ + updateRoom(HotelRoom room): void 
+ + findAndAddNewRoom(HotelRoom newRoom): String 
+ + editImage(String name, String img, String img2): void 
+ + deleteItem(int id): void 
+ + bookRoom(HotelRoom room): void </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>520</x>
+      <y>0</y>
+      <w>410</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>HotelRoomDAOImpl
+--
+ - customerDAO: CustomerDAO
+--
+
+ + RoomDAOImpl()
+ + getRoomByID(int id): HotelRoom 
+ + getRoomByName(String name): HotelRoom 
+ + getAllRooms(): List&lt;HotelRoom&gt; 
+ + getNumRooms(): long 
+ + getRoomByPage(int page): List&lt;HotelRoom&gt; 
+ + getRelatedHotelRooms(String type): List&lt;HotelRoom&gt; 
+ + updateRoom(HotelRoom room): void 
+ + findAndAddNewRoom(HotelRoom newRoom): String 
+ + editImage(String name, String img, String img2): void 
+ + deleteItem(int id): void 
+ + bookRoom(HotelRoom room): void 
+ </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>420</x>
+      <y>120</y>
+      <w>120</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>430</x>
+      <y>90</y>
+      <w>100</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>implements
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>420</x>
+      <y>430</y>
+      <w>120</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>320</y>
+      <w>410</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+HotelItemDAO
+--
+
+--
+
+ + getHotelItemByID(int id): T 
+ + getHotelItemByName(String name): T 
+ + getAllHotelItems(): List&lt;T&gt; 
+ + getRelatedHotelItems(String type): List&lt;T&gt; 
+ + findAndAddNewItem(HotelItem newItem): String 
+ + editImage(String name, String img, String img2): void 
+ + deleteItem(int id): void 
+ + updateItem(HotelItem item): void </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>430</x>
+      <y>410</y>
+      <w>100</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>implements
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>520</x>
+      <y>320</y>
+      <w>410</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>HotelItemDAOImpl&lt;T&gt;
+--
+ # sessionFactory: SessionFactory 
+ # classOfT: Class&lt;T&gt; 
+--
+
+ + getHotelItemByID(int id): T 
+ + getHotelItemByName(String name): T 
+ + getAllHotelItems(): List&lt;T&gt; 
+ + getRelatedHotelItems(String type): List&lt;T&gt; 
+ + findAndAddNewItem(HotelItem newItem): String 
+ + editImage(String name, String img, String img2): void 
+ + deleteItem(int id): void 
+ + updateItem(HotelItem item): void 
+ </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>600</y>
+      <w>410</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+RestaurantDAO 
+--
+
+--
+
+ + getHotelServiceByID(int id): HotelService 
+ + getHotelServiceByName(String name): HotelService 
+ + getAllHotelServices(): List&lt;HotelService&gt; 
+ + getRelatedHotelServices(String type): List&lt;HotelService&gt; 
+ + findAndAddNewService(HotelService newService): String 
+ + updateService(HotelService service): void 
+ + editImage(String name, String img, String img2): void 
+ + deleteItem(int id): void  </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>520</x>
+      <y>600</y>
+      <w>410</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>RestaurantDAOImpl
+--
+
+--
+
+ + RestaurantDAOImpl()
+ + getHotelServiceByID(int id): HotelService 
+ + getHotelServiceByName(String name): HotelService 
+ + getAllHotelServices(): List&lt;HotelService&gt; 
+ + getRelatedHotelServices(String type): List&lt;HotelService&gt; 
+ + findAndAddNewService(HotelService newService): String 
+ + updateService(HotelService service): void 
+ + editImage(String name, String img, String img2): void 
+ + deleteItem(int id): void 
+ </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>420</x>
+      <y>710</y>
+      <w>120</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>430</x>
+      <y>690</y>
+      <w>100</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>implements
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>210</x>
+      <y>270</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>710</x>
+      <y>270</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>210</x>
+      <y>530</y>
+      <w>30</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>710</x>
+      <y>530</y>
+      <w>30</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>230</x>
+      <y>290</y>
+      <w>100</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>extends
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>730</x>
+      <y>290</y>
+      <w>100</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>extends
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>230</x>
+      <y>560</y>
+      <w>100</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>extends
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>730</x>
+      <y>560</y>
+      <w>100</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>extends
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

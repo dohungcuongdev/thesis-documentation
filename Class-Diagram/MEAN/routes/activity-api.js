@@ -1,15 +1,11 @@
-var express = require('express');
-var router = express.Router();
-var ctrl = require('../controller/app-controller');
-
-router.get('/', ctrl.getActivity);
-router.get('/:id', ctrl.getActivityByID);
-router.get('/username/:username', ctrl.getActivityByUserName);
-router.get('/feedback-room/:id', ctrl.getActivityFeedBackRoom);
-router.get('/response/not-yet', ctrl.getNotResponseActivity);
-router.get('/seen-notification/:id', ctrl.seenAndGetNotification);
-router.get('/reply-notification/:id', ctrl.replyAndGetNotification);
-router.post('/', ctrl.postActivity);
-router.delete('/:id', ctrl.deleteActivity);
-
-module.exports = router;
+ - ctrl: controller
+ 
+ - getActivity(): GET URL('/')
+ - getActivityByID(id): GET URL('/:id')
+ - getActivityByUserName(username): GET URL('/username/:username')
+ - getActivityFeedBackRoom(id): GET URL('/feedback-room/:id')
+ - getNotResponseActivity(id): GET URL('/response/not-yet')
+ - seenAndGetNotification(id): GET URL('/seen-notification/:id')
+ - replyAndGetNotification(id): GET URL('/reply-notification/:id')
+ - postActivity(): POST URL('/')
+ - deleteActivity(id): DELETE URL('/:id')

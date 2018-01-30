@@ -1,65 +1,45 @@
-var bcrypt = require('bcryptjs');
-var mongoose = require('mongoose');
-var appConst = require('../const/app-const');
-var Schema = mongoose.Schema;
-mongoose.Promise = global.Promise;
 
-var followUserSchema = new Schema(
-    {
-        user_ip_address: String,
-        external_ip_address: String,
-        username: String,
-        page_access: String,
-        duration: Number,
-        // range: Array,
-        // country: String,
-        // region: String,
-        // city: String,
-        // ll: Array,
-        // metro: Number,
-        // zip: Number,
-        created_at: { type: Date, default: Date.now }
-    },
-    {
-        collection: 'follow-users'
-    }
-);
-var follow_users = module.exports = mongoose.model('follow_users', followUserSchema);
+ + user_ip_address: String
+ + external_ip_address: String
+ + username: String
+ + page_access: String
+ + duration: Number
+ + created_at: Date
 
-module.exports.findAll = function (callbackAction) 
+ + findAll(callbackAction) 
 
-module.exports.findFollowUserByPage = function (page, callbackAction) 
+ + findFollowUserByPage(page, callbackAction) 
 
-module.exports.countClickTracking = function (callbackAction) 
+ + countClickTracking(callbackAction) 
 
-module.exports.findSortedTrackingData = function (field_name, callbackAction) 
+ + findSortedTrackingData(field_name, callbackAction) 
 
-module.exports.findSortedTrackingData2 = function (fieldname, sort, page, callbackAction) 
+ + findSortedTrackingData2(fieldname, sort, page, callbackAction) 
 
-var getSearchDateQuery = function(keyword) 
+ - getSearchDateQuery(keyword) 
 
-var getSearchDurationQuery = function(keyword) 
+ - getSearchDurationQuery(keyword) 
 
-module.exports.searchTrackingData = function (fieldname, keyword, sort, page, callbackAction) 
+ + searchTrackingData(fieldname, keyword, sort, page, callbackAction) 
 
-module.exports.countSearchPage = function (fieldname, keyword, callbackAction) 
+ + countSearchPage(fieldname, keyword, callbackAction) 
 
-module.exports.findByUserIP = function (user_ip_address, callbackAction) 
+ + findByUserIP(user_ip_address, callbackAction) 
 
-module.exports.findExternalIP = function (external_ip_address, callbackAction) 
+ + findExternalIP(external_ip_address, callbackAction) 
 
-module.exports.findCountryChartData = function (callbackAction) 
+ + findCountryChartData(callbackAction) 
 
-module.exports.findExternalIPStatistics = function (callbackAction) 
+ + findExternalIPStatistics(callbackAction) 
 
-module.exports.findIPStatistics = function (callbackAction) 
+ + findIPStatistics(callbackAction) 
 
-module.exports.findUsernameStatistics = function (callbackAction) 
+ + findUsernameStatistics(callbackAction) 
 
-module.exports.findPageAccessStatistics = function (callbackAction) 
+ + findPageAccessStatistics(callbackAction) 
 
-module.exports.findPageAccessByIP = function (user_ip_address, callbackAction) 
+ + findPageAccessByIP(user_ip_address, callbackAction) 
 
-module.exports.findPageAccessByUsername = function (username, callbackAction) 
+ + findPageAccessByUsername(username, callbackAction) 
 
-module.exports.add = function (newFolowUsersModel) 
+ + add(newFolowUsersModel) 

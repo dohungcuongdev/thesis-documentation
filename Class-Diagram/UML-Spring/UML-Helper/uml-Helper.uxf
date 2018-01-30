@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>750</y>
+      <w>480</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>EmailSender  
+--
+
+ - SMTPAuthenticator: inner class &lt;&lt;static&gt;&gt;
+ 
+--
+ + sendEmail(String message, String sendto, String subject): String  &lt;&lt;static&gt;&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>30</y>
+      <w>410</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>DateTimeCalculator 
+--
+
+--
+ + Date getToday() &lt;&lt;static&gt;&gt;
+	
+ + String getTimeToday() &lt;&lt;static&gt;&gt;
+	
+ + Date getDateFormated(String strDate) &lt;&lt;static&gt;&gt;
+    
+ + Date formatDateTime(String dateTime, String format) &lt;&lt;static&gt;&gt;
+
+ + Date formatDateTime(String dateTime) &lt;&lt;static&gt;&gt;
+    
+ + Date getICTDateTime(String dateTime) &lt;&lt;static&gt;&gt; </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>550</x>
+      <y>750</y>
+      <w>380</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>SMTPAuthenticator 
+--
+
+ - authentication: PasswordAuthentication &lt;final&gt;
+ 
+--
+ + SMTPAuthenticator(String login, String password)
+ # getPasswordAuthentication(): PasswordAuthentication </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>660</x>
+      <y>660</y>
+      <w>150</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Authenticator </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>10</x>
+      <y>530</y>
+      <w>920</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>FileUploader  
+--
+
+--
+ + uploadImage(CommonsMultipartFile commonsMultipartFiles, HttpServletRequest request, ModelMap model, String itemType): String &lt;&lt;static&gt;&gt;
+ + uploadPDF(CommonsMultipartFile commonsMultipartFiles, HttpServletRequest request, ModelMap model): void &lt;&lt;static&gt;&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>510</x>
+      <y>30</y>
+      <w>370</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>GeoLookup  
+--
+
+ - lookUp: LookupService &lt;&lt;static&gt;&gt;
+ 
+--
+
+ + getLocation(String externalIP): GeoLocation &lt;&lt;static&gt;&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>350</y>
+      <w>410</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>MathCalculator  
+--
+
+--
+
+ + round(double value): double &lt;&lt;static&gt;&gt;
+ + round(double value, int places): double &lt;&lt;static&gt;&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>510</x>
+      <y>260</y>
+      <w>370</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>StringUtils 
+--
+
+ - SOURCE_CHARACTERS: char[] &lt;&lt;static&gt;&gt; &lt;&lt;final&gt;&gt;
+ - DESTINATION_CHARACTERS: char[] &lt;&lt;static&gt;&gt; &lt;&lt;final&gt;&gt;
+ 
+--
+
+ + removeAccent(char ch): char &lt;&lt;static&gt;&gt;
+ + removeAccent(String s): String &lt;&lt;static&gt;&gt;
+ + encode(String s): String &lt;&lt;static&gt;&gt;
+ + lowerFirstChar(String varname): String &lt;&lt;static&gt;&gt;
+ + upperFirstChar(String varname): String &lt;&lt;static&gt;&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>470</x>
+      <y>800</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>720</x>
+      <y>680</y>
+      <w>30</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>730</x>
+      <y>710</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>extends
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

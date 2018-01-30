@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>0</y>
+      <w>1120</w>
+      <h>1090</h>
+    </coordinates>
+    <panel_attributes>AppController
+&lt;&lt; mapping URL: "/" &gt;&gt; 
+--
+ - UserService userService;
+ - HotelItemService hotelItemService;
+ - ApplicationService appService;
+--
+ + login(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + checklogin(LoginBean loginbean, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + logout(HttpServletRequest request) 
+ + index(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + searchResult(String keyword, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + profile(HttpServletRequest request, HttpServletResponse response, ModelMap model)  &lt;&lt;"/profile", method = GET &gt;&gt;
+ + changePassword(ChangePasswordBean changePassBean, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + editProfile(Administrator ad, HttpServletRequest request, HttpServletResponse response, ModelMap model)
+ + profileImgEdited(CommonsMultipartFile img, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + manageRooms(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + singleRoom(String roomName, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + editRoom(String roomName, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + addRoom(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + roomAdded(HotelRoom newRoom, HttpServletRequest request, HttpServletResponse response, ModelMap model)
+ + roomEdited(HotelRoom roomEdit, HttpServletRequest request, HttpServletResponse response, ModelMap model)
+ + removeRoom(int id, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + roomImgEdited(CommonsMultipartFile img1, CommonsMultipartFile img2, String roomName, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + manageRestaurant(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + singleService(String servicename, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + addService(HttpServletRequest request, HttpServletResponse response, ModelMap model)
+ + serviceAdded(HotelService newService, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + editService(String servicename, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + serviceEdited(HotelService serviceEdit, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + removeService(int id, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + serviceImgEdited(CommonsMultipartFile img1, CommonsMultipartFile img2, String servicename, HttpServletRequest request, HttpServletResponse response, ModelMap model)
+ + manageUsers(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + followAllUsers(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + followUsers(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + followUsersPage(int page, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + followUsersPageSorted(String fieldname, String sort, int page, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + searchFollowUsers(String fieldname, String keyword, String sort, int page, HttpServletRequest request, HttpServletResponse response, ModelMap model)
+ + trackingIP(HttpServletRequest request, HttpServletResponse response, ModelMap model)
+ + trackingExternalIP(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + trackingMemebers(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + pageAccessStatistics(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + followUserChart(HttpServletRequest request, HttpServletResponse response, ModelMap model)
+ + pageAccessChart(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + pageAccessMemberChart(String username, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + pageAccessIPChart(String ipaddress, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + followUsersIP(String ip, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + followMember(String username, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + ipDetails(String externalip, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + singleUser(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + singleCustomer(HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + singleUser(String username, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + singleCustomer(String username, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + message(HttpServletRequest request, HttpServletResponse response, ModelMap model)  
+ + notification(String id, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + replyBooking(String id, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + replyCancel(String id, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + sendMail(String id, String message, String useremail, String subject, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + fqa(HttpServletRequest request, HttpServletResponse response, ModelMap model, String redirect) 
+ + uploadFQA(CommonsMultipartFile fqaPDF, HttpServletRequest request, HttpServletResponse response, ModelMap model) 
+ + downloadCSV(HttpServletRequest request, HttpServletResponse response)
+ - isAuthenticated(HttpServletRequest request): boolean 
+ - checkAuth(HttpServletRequest request, HttpServletResponse response): void 
+ - authInitializeRedirect(HttpServletRequest request, HttpServletResponse response, ModelMap model, String redirect): String 
+ - initialize(ModelMap model): void 
+ - initializeProfile(ModelMap model): String 
+ - initializeSingleRoom(ModelMap model, String roomName, String redirect): String 
+ - initializeSingleService(ModelMap model, String servicename, String redirect): String 
+ - initializeTracking(String tracking, HttpServletRequest request, HttpServletResponse response, ModelMap model): String</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
