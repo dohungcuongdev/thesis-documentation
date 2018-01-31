@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>400</x>
+      <y>0</y>
+      <w>460</w>
+      <h>1380</h>
+    </coordinates>
+    <panel_attributes>Controller
+--
+ - activityModel: activity-model
+ - userModel: user-model
+ - followUserModel: follow-users-model
+ - ipSuggestModel: ip-suggest-model
+ - externalip: externalip &lt;&lt;const&gt;&gt;
+ - cookie: cookie;
+ - appConst: app-const
+ - httpRequest: request;
+ - nodemailer: nodemailer;
+ - transporter: Transport
+--
+ - sendHTMLEmail(from, to, subject, content) 
+ - getApi(response, err, resource) 
+ - postApi(response, err, resource) 
+ - deleteApi(response, err, resource) 
+ + getActivityByUserName(request, response) 
+ + getNotResponseActivity(request, response) 
+ - getActivityByID(request, response) 
+ + getActivityByID(request, response) 
+ + seenAndGetNotification(request, response) 
+ + replyAndGetNotification(request, response) 
+ + getActivityFeedBackRoom(request, response) 
+ + getActivity(request, response) 
+ + getFollowUserByUserIP(request, response) 
+ + getFollowUserByPage(request, response) 
+ + getNumPageTracking(request, response) 
+ + getSortedTrackingData(request, response) 
+ + getSortedTrackingData2(request, response) 
+ + searchTrackingData(request, response)
+ + searchTotalPage(request, response) 
+ + getExternalIP(request, response) 
+ + getExternalIPStatistics(request, response) 
+ + getIPStatistics(request, response) 
+ + getUsernameStatistics(request, response) 
+ + getPageAccessStatistics(request, response) 
+ + getPageAccessByIP(request, response) 
+ + getPageAccessByUsername(request, response) 
+ + getCountryChartData(request, response) 
+ + getFollowUserByID(request, response) 
+ + getFollowUser(request, response) 
+ + getUser(request, response) 
+ + getUserByID(request, response) 
+ + GetUserByUsername(request, response) 
+ + postActivity(request, response) 
+ - getMailContent(subject, time) 
+ + postFollowUser(request, response) 
+ + putUser(req, response, next) 
+ + deleteActivity(request, response) 
+ + deleteFollowUser(request, response) 
+ + serializeUser(username, done) 
+ + deserializeUser(id, done) 
+ + checklogin(username, password, done) 
+ + logout(req, res) 
+ + login(req, res, next) 
+ + loginsuccess(req, res, next) 
+ + changepass(req, res, next) 
+ - renderChangePWError(err, res) 
+ + checkPassword(req, res, next) 
+ + register(req, res, next) 
+ + checkregister(req, res, next) 
+ - getRoomNameCustomerClicked(follow_users)
+ - updateNewIpSuggest(ipSuggestModel, ipSuggest, userip) 
+ + getRoomSuggestion(request, response) 
+ - updateRecommemdationRoom(follow_users, ip_address) 
+ - saveFollowUserByIP(follow_users, ip_address, external_ip, response) 
+ - saveFollowUserData(request, response, external_ip) 
+ - followUserBehavior(page_access, duration, username) 
+ - followUsers(new_page_access, req, res) 
+ - getIpAddress() 
+ - checkAuthentication(req, res, next) 
+ - getSuggestionRoom(rooms, price, size, avgAminities) 
+ - get4NumNearest(rooms, att, value)
+ - getIndicesOfMin(inp, n)
+ - checkNotNull(...items) 
+ - checkIsNaturalNumber(...items) 
+ - checkIsPositiveFloat(...items) 
+ - isValidEmail(email) 
+ - isValidIPaddress(ipaddress) 
+ - isValidUsername(username) 
+ - isValidUser(user) 
+ - isAceptableUser(user)
+ - activityIsAbleToUpdate(activity) 
+ - followUserIsAbleToUpdate(followUser) 
+ - ipSuggestIsAbleToUpdate(ipSuggest)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>920</x>
+      <y>490</y>
+      <w>350</w>
+      <h>430</h>
+    </coordinates>
+    <panel_attributes>TrackingAPI
+--
+ - express: express
+ - router: router
+ - ctrl: controller
+ 
+--
+- getFollowUser(): GET URL('/');
+- getFollowUserByID(id): GET URL('/:id');
+- getFollowUserByPage(page): GET URL('/page/:page');
+- getNumPageTracking(): GET URL('/count/page');
+- getSortedTrackingData(field_name): GET URL('/sort/:field_name');
+- getSortedTrackingData2(fieldname, sortOrder, page): GET URL('/:fieldname/:sort/:page');
+- searchTotalPage(fieldname, keyword): GET URL('/search/total-page/:fieldname/:keyword');
+- searchTrackingData(keyword, sortOrder, page): GET URL('/search/all/:fieldname/:keyword/:sort/:page');
+- getFollowUserByUserIP(userIP): GET URL('/userIP/:userIP');
+- getExternalIP(externalIP): GET URL('/externalIP/:externalIP');
+- getCountryChartData(): GET URL('/country/chart-data');
+- getExternalIPStatistics(): GET URL('/statistics/ExternalIP');
+- getIPStatistics(): GET URL('/statistics/UserIP');
+- getUsernameStatistics(): GET URL('/statistics/Username');
+- getPageAccessStatistics(): GET URL('/statistics/PageAccess');
+- getPageAccessByIP(userIP): GET URL('/statistics/PageAccess/userIP/:userIP');
+- getPageAccessByUsername(username): GET URL('/statistics/PageAccess/username/:username');
+- deleteFollowUser(id): DELETE URL ('/:id');
+- postFollowUser(): POST URL('/');
+- getRoomSuggestion(): GET URL('/room/suggest-room');</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>920</x>
+      <y>0</y>
+      <w>350</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>CustomerAPI
+--
+ - express: express
+ - router: router
+ - ctrl: controller
+--
+ - getUserByID(id): GET URL('/:id');
+ - GetUserByUsername(username): GET URL('/username/:username');
+ - getUser(): GET URL('/');
+ - putUser(id): PUT URL('/:id'); </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>920</x>
+      <y>200</y>
+      <w>350</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>ActivityAPI
+--
+ - express: express
+ - router: router
+ - ctrl: controller
+--
+ - getActivity(): GET URL('/')
+ - getActivityByID(id): GET URL('/:id')
+ - getActivityByUserName(username): GET URL('/username/:username')
+ - getActivityFeedBackRoom(id): GET URL('/feedback-room/:id')
+ - getNotResponseActivity(id): GET URL('/response/not-yet')
+ - seenAndGetNotification(id): GET URL('/seen-notification/:id')
+ - replyAndGetNotification(id): GET URL('/reply-notification/:id')
+ - postActivity(): POST URL('/')
+ - deleteActivity(id): DELETE URL('/:id')</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>910</x>
+      <y>980</y>
+      <w>200</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>AppRoute
+--
+ - express: express
+ - router: router
+ - passport: passport
+ - ctrl: controller
+--
+ -login: &lt;&lt;get&gt;&gt;
+ -login: &lt;&lt;post&gt;&gt;
+ -loginsuccess: &lt;&lt;get&gt;&gt;
+ -logout: &lt;&lt;get&gt;&gt;
+ -register: &lt;&lt;get&gt;&gt;
+ -register: &lt;&lt;post&gt;&gt;
+ -change-password: &lt;&lt;get&gt;&gt;
+ -change-password: &lt;&lt;post&gt;&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>1140</x>
+      <y>940</y>
+      <w>190</w>
+      <h>320</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1170</x>
+      <y>1080</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Login</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1170</x>
+      <y>1000</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Register</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1170</x>
+      <y>1160</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>ChangePassword</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1370</x>
+      <y>1090</y>
+      <w>80</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Footer</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1370</x>
+      <y>1020</y>
+      <w>80</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Header</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1370</x>
+      <y>1150</y>
+      <w>80</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Alert</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1370</x>
+      <y>1220</y>
+      <w>80</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Error</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1100</x>
+      <y>1090</y>
+      <w>60</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;40.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1320</x>
+      <y>1030</y>
+      <w>70</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;40.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1320</x>
+      <y>1090</y>
+      <w>70</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1320</x>
+      <y>1120</y>
+      <w>70</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1400</x>
+      <y>1170</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>0</y>
+      <w>350</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>Customer
+--
+ - bcrypt = bcryptjs
+ - mongoose = mongoose
+ + username: String
+ + password: String
+ + name: String
+ + phone: String
+ + address: String
+ + balance: Number
+ + created_at: Date
+--
+ + addUser(newuser) 
+ + getUserByUsername(username, callbackAction) 
+ + comparePwd(password, hash, callback) 
+ + getUserByID(id, callback) 
+ + updatePassword(username, newpassword) </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>300</y>
+      <w>350</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>Activity
+--
+ - mongoose = mongoose
+ + username: String
+ + name: String
+ + click: String
+ + details: String
+ + note: String
+ + content: String
+ + response: String
+ + created_at: Date
+--
+ + findAll(callbackAction) 
+ + findActivityByUserName(username, callbackAction)
+ + findNotResponseActivity(username, callbackAction) 
+ + findFeedbackRoom(roomid, callbackAction) 
+ + addActivity(newActivity)
+ + updateResponse(id, response) </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>1140</y>
+      <w>350</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>RecommendationData
+--
+ - mongoose = mongoose
+ + ip: String
+ + size: Number
+ + price: Number
+ + avgAminities: Number
+ + count: Number
+--
+ + findByUserIP(ip, callbackAction) 
+ + add(newIPSuggest) 
+ + update(id, newIPSuggest) </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>620</y>
+      <w>350</w>
+      <h>460</h>
+    </coordinates>
+    <panel_attributes>Tracking
+--
+ - mongoose = mongoose
+ + username: String
+ + user_ip_address: String
+ + external_ip_address: String
+ + username: String
+ + page_access: String
+ + duration: Number
+ + created_at: Date
+--
+ + findAll(callbackAction) 
+ + findFollowUserByPage(page, callbackAction) 
+ + countClickTracking(callbackAction) 
+ + findSortedTrackingData(field_name, callbackAction) 
+ + findSortedTrackingData2(fieldname, sort, page, callbackAction) 
+ - getSearchDateQuery(keyword) 
+ - getSearchDurationQuery(keyword) 
+ + searchTrackingData(fieldname, keyword, sort, page, callbackAction) 
+ + countSearchPage(fieldname, keyword, callbackAction) 
+ + findByUserIP(user_ip_address, callbackAction) 
+ + findExternalIP(external_ip_address, callbackAction) 
+ + findCountryChartData(callbackAction) 
+ + findExternalIPStatistics(callbackAction) 
+ + findIPStatistics(callbackAction) 
+ + findUsernameStatistics(callbackAction) 
+ + findPageAccessStatistics(callbackAction) 
+ + findPageAccessByIP(user_ip_address, callbackAction) 
+ + findPageAccessByUsername(username, callbackAction) 
+ + add(newFolowUsersModel) </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>340</x>
+      <y>120</y>
+      <w>80</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+use</panel_attributes>
+    <additional_attributes>10.0;20.0;60.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>340</x>
+      <y>430</y>
+      <w>80</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+use</panel_attributes>
+    <additional_attributes>10.0;20.0;60.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>340</x>
+      <y>850</y>
+      <w>80</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+use</panel_attributes>
+    <additional_attributes>10.0;20.0;60.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>340</x>
+      <y>1230</y>
+      <w>80</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+use</panel_attributes>
+    <additional_attributes>10.0;20.0;60.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>850</x>
+      <y>60</y>
+      <w>90</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+use</panel_attributes>
+    <additional_attributes>10.0;20.0;70.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>850</x>
+      <y>310</y>
+      <w>90</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+use</panel_attributes>
+    <additional_attributes>10.0;20.0;70.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>850</x>
+      <y>670</y>
+      <w>90</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+use</panel_attributes>
+    <additional_attributes>10.0;20.0;70.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>850</x>
+      <y>1070</y>
+      <w>80</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+use</panel_attributes>
+    <additional_attributes>10.0;20.0;60.0;20.0</additional_attributes>
+  </element>
+</diagram>

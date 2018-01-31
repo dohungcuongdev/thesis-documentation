@@ -1,0 +1,57 @@
+h3 {
+    color: #CC0033;
+    font-weight: bold;
+}
+
+table.rooms {
+    font-family: "Times New Roman", Times, serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table.rooms th, td {
+    text-align: center;
+    padding: 8px;
+}
+
+table.rooms tr:nth-child(even){
+    background-color: #FFEDCA
+}
+
+table.rooms tr:nth-child(odd){
+    background-color: #FFFFFF
+}
+
+table.rooms th {
+    background-color: #CC0033;
+    color: #FFFFFF;
+}
+
+table.rooms tbody>tr:hover>th{
+    background-color:#CC0033;
+    color: #000000;
+}
+
+table.rooms tbody>tr:hover{
+    background-color:#CC0033;
+    color: #FFFFFF;
+}
+
+table.rooms tr {
+    font-size: 15px;
+    color: black;
+}
+
+/* iPad */
+@media only screen and (max-width: 800px) {
+    #suggestRoom {
+        display: none;
+    }
+} /* responsive */
+
+/* mobile */
+@media only screen and (max-width: 605px) {
+    #suggestRoom {
+        display: none;
+    }
+} /* responsive */

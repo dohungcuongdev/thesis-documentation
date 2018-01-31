@@ -1,0 +1,24 @@
+
+
+
+
+
+These models are pojo classes which mean no relationship.
+
+
+
+3 layer:
+
+API DAOs
+APIDAO is the interface which is implemented by APIDAOImpl provides function get data by an API URL for some DAOs that extends.
+CustomerDAOImpl, ActivityDAOImpl and TrackingDAOImpl are sub classes implements CustomerDAO, ActivityDAO, TrackingDAO intefaces. 
+These interfaces extends APIDAO which use the data getted from another API provider to do bussiness logic for Service (in section 5) 
+or return data based on Customer, Activity or Tracking Model (in section 3) 
+
+
+Hibernate DAOs
+Similar to APIDAO there are some DAOs mapping with Hibernate such as AdminDAO, HotelRoomDAO, RestaurantDAO. They works as same as the DAOs in section 3 but
+interact with SQL database for data instead of data from other API provider.
+
+
+Services

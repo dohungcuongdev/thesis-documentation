@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>420</x>
+      <y>240</y>
+      <w>350</w>
+      <h>460</h>
+    </coordinates>
+    <panel_attributes>Tracking
+--
+ - mongoose = mongoose
+ + username: String
+ + user_ip_address: String
+ + external_ip_address: String
+ + username: String
+ + page_access: String
+ + duration: Number
+ + created_at: Date
+--
+ + findAll(callbackAction) 
+ + findFollowUserByPage(page, callbackAction) 
+ + countClickTracking(callbackAction) 
+ + findSortedTrackingData(field_name, callbackAction) 
+ + findSortedTrackingData2(fieldname, sort, page, callbackAction) 
+ - getSearchDateQuery(keyword) 
+ - getSearchDurationQuery(keyword) 
+ + searchTrackingData(fieldname, keyword, sort, page, callbackAction) 
+ + countSearchPage(fieldname, keyword, callbackAction) 
+ + findByUserIP(user_ip_address, callbackAction) 
+ + findExternalIP(external_ip_address, callbackAction) 
+ + findCountryChartData(callbackAction) 
+ + findExternalIPStatistics(callbackAction) 
+ + findIPStatistics(callbackAction) 
+ + findUsernameStatistics(callbackAction) 
+ + findPageAccessStatistics(callbackAction) 
+ + findPageAccessByIP(user_ip_address, callbackAction) 
+ + findPageAccessByUsername(username, callbackAction) 
+ + add(newFolowUsersModel) </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>420</x>
+      <y>50</y>
+      <w>350</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>RecommendationData
+--
+ - mongoose = mongoose
+ + ip: String
+ + size: Number
+ + price: Number
+ + avgAminities: Number
+ + count: Number
+--
+ + findByUserIP(ip, callbackAction) 
+ + add(newIPSuggest) 
+ + update(id, newIPSuggest) </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>30</x>
+      <y>360</y>
+      <w>350</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>Activity
+--
+ - mongoose = mongoose
+ + username: String
+ + name: String
+ + click: String
+ + details: String
+ + note: String
+ + content: String
+ + response: String
+ + created_at: Date
+--
+ + findAll(callbackAction) 
+ + findActivityByUserName(username, callbackAction)
+ + findNotResponseActivity(username, callbackAction) 
+ + findFeedbackRoom(roomid, callbackAction) 
+ + addActivity(newActivity)
+ + updateResponse(id, response) </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>50</y>
+      <w>350</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>Customer
+--
+ - bcrypt = bcryptjs
+ - mongoose = mongoose
+ + username: String
+ + password: String
+ + name: String
+ + phone: String
+ + address: String
+ + balance: Number
+ + created_at: Date
+--
+ + addUser(newuser) 
+ + getUserByUsername(username, callbackAction) 
+ + comparePwd(password, hash, callback) 
+ + getUserByID(id, callback) 
+ + updatePassword(username, newpassword) </panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

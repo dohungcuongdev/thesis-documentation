@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>20</x>
-      <y>0</y>
+      <x>10</x>
+      <y>170</y>
       <w>410</w>
       <h>280</h>
     </coordinates>
@@ -31,8 +31,8 @@ HotelRoomDAO
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>520</x>
-      <y>0</y>
+      <x>510</x>
+      <y>170</y>
       <w>410</w>
       <h>280</h>
     </coordinates>
@@ -59,8 +59,8 @@ HotelRoomDAO
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>420</x>
-      <y>120</y>
+      <x>410</x>
+      <y>290</y>
       <w>120</w>
       <h>30</h>
     </coordinates>
@@ -70,8 +70,8 @@ HotelRoomDAO
   <element>
     <id>Text</id>
     <coordinates>
-      <x>430</x>
-      <y>90</y>
+      <x>420</x>
+      <y>260</y>
       <w>100</w>
       <h>70</h>
     </coordinates>
@@ -82,8 +82,8 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>420</x>
-      <y>430</y>
+      <x>410</x>
+      <y>600</y>
       <w>120</w>
       <h>30</h>
     </coordinates>
@@ -93,8 +93,8 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>20</x>
-      <y>320</y>
+      <x>10</x>
+      <y>490</y>
       <w>410</w>
       <h>220</h>
     </coordinates>
@@ -117,8 +117,8 @@ HotelItemDAO
   <element>
     <id>Text</id>
     <coordinates>
-      <x>430</x>
-      <y>410</y>
+      <x>420</x>
+      <y>580</y>
       <w>100</w>
       <h>70</h>
     </coordinates>
@@ -129,8 +129,8 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>520</x>
-      <y>320</y>
+      <x>510</x>
+      <y>490</y>
       <w>410</w>
       <h>220</h>
     </coordinates>
@@ -154,8 +154,8 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>20</x>
-      <y>600</y>
+      <x>10</x>
+      <y>770</y>
       <w>410</w>
       <h>220</h>
     </coordinates>
@@ -178,8 +178,8 @@ RestaurantDAO
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>520</x>
-      <y>600</y>
+      <x>510</x>
+      <y>770</y>
       <w>410</w>
       <h>220</h>
     </coordinates>
@@ -203,8 +203,8 @@ RestaurantDAO
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>420</x>
-      <y>710</y>
+      <x>410</x>
+      <y>880</y>
       <w>120</w>
       <h>30</h>
     </coordinates>
@@ -214,8 +214,8 @@ RestaurantDAO
   <element>
     <id>Text</id>
     <coordinates>
-      <x>430</x>
-      <y>690</y>
+      <x>420</x>
+      <y>860</y>
       <w>100</w>
       <h>70</h>
     </coordinates>
@@ -226,8 +226,19 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>210</x>
-      <y>270</y>
+      <x>200</x>
+      <y>430</y>
+      <w>30</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>700</x>
+      <y>440</y>
       <w>30</w>
       <h>70</h>
     </coordinates>
@@ -237,19 +248,8 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>710</x>
-      <y>270</y>
-      <w>30</w>
-      <h>70</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>210</x>
-      <y>530</y>
+      <x>200</x>
+      <y>700</y>
       <w>30</w>
       <h>90</h>
     </coordinates>
@@ -259,8 +259,8 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>710</x>
-      <y>530</y>
+      <x>700</x>
+      <y>700</y>
       <w>30</w>
       <h>90</h>
     </coordinates>
@@ -270,8 +270,8 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>230</x>
-      <y>290</y>
+      <x>220</x>
+      <y>460</y>
       <w>100</w>
       <h>70</h>
     </coordinates>
@@ -282,8 +282,8 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>730</x>
-      <y>290</y>
+      <x>720</x>
+      <y>460</y>
       <w>100</w>
       <h>70</h>
     </coordinates>
@@ -294,8 +294,8 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>230</x>
-      <y>560</y>
+      <x>220</x>
+      <y>730</y>
       <w>100</w>
       <h>70</h>
     </coordinates>
@@ -306,13 +306,52 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>730</x>
-      <y>560</y>
+      <x>720</x>
+      <y>730</y>
       <w>100</w>
       <h>70</h>
     </coordinates>
     <panel_attributes>extends
 style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>510</x>
+      <y>0</y>
+      <w>410</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>AdminDAOImpl
+--
+ - sessionFactory: SessionFactory 
+--
+ + getAdminByUserName(String username): Administrator 
+ + updateAdmin(Administrator ad): void 
+ + editProfileImg(String username, String img): void 
+ + updatePassword(String username, String newpassword): void 
+ </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>10</x>
+      <y>0</y>
+      <w>410</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+AdminDAO
+--
+
+--
+ + getAdminByUserName(String username): Administrator 
+ + updateAdmin(Administrator ad): void 
+ + editProfileImg(String username, String img): void 
+ + updatePassword(String username, String newpassword): void 
+</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
