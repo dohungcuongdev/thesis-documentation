@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>0</y>
+      <w>1020</w>
+      <h>890</h>
+    </coordinates>
+    <panel_attributes>Controller
+--
+
+
+
+
+
+
+
+
+
+
+
+ 
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>230</y>
+      <w>480</w>
+      <h>640</h>
+    </coordinates>
+    <panel_attributes>--
+ + getActivity(request, response) 
+ + getFollowUserByUserIP(request, response) 
+ + getFollowUserByPage(request, response) 
+ + getNumPageTracking(request, response) 
+ + getSortedTrackingData(request, response) 
+ + getSortedTrackingData2(request, response) 
+ + searchTrackingData(request, response)
+ + searchTotalPage(request, response) 
+ + getExternalIP(request, response) 
+ + getExternalIPStatistics(request, response) 
+ + getIPStatistics(request, response) 
+ + getUsernameStatistics(request, response) 
+ + getPageAccessStatistics(request, response) 
+ + getPageAccessByIP(request, response) 
+ + getPageAccessByUsername(request, response) 
+ + getCountryChartData(request, response) 
+ + getFollowUserByID(request, response) 
+ + getFollowUser(request, response) 
+ + getUser(request, response) 
+ + getUserByID(request, response) 
+ + GetUserByUsername(request, response) 
+ + postActivity(request, response) 
+ + postFollowUser(request, response) 
+ + putUser(req, response, next) 
+ + deleteActivity(request, response) 
+ + deleteFollowUser(request, response) 
+ + serializeUser(username, done) 
+ + deserializeUser(id, done) 
+ + checklogin(username, password, done) 
+ + logout(req, res) 
+ + login(req, res, next) 
+ + loginsuccess(req, res, next) 
+ + changepass(req, res, next) 
+ + checkPassword(req, res, next) 
+ + register(req, res, next) 
+ + checkregister(req, res, next) 
+ + getRoomSuggestion(request, response) </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>530</x>
+      <y>230</y>
+      <w>460</w>
+      <h>640</h>
+    </coordinates>
+    <panel_attributes>--
+ + getActivityByUserName(request, response) 
+ + getNotResponseActivity(request, response) 
+ + getActivityByID(request, response) 
+ + seenAndGetNotification(request, response) 
+ + replyAndGetNotification(request, response) 
+ + getActivityFeedBackRoom(request, response) 
+ - sendHTMLEmail(from, to, subject, content) 
+ - getApi(response, err, resource) 
+ - postApi(response, err, resource) 
+ - deleteApi(response, err, resource) 
+ - getActivityByID(request, response) 
+ - getRoomNameCustomerClicked(follow_users)
+ - updateNewIpSuggest(ipSuggestModel, ipSuggest, userip) 
+ - updateRecommemdationRoom(follow_users, ip_address) 
+ - saveFollowUserByIP(follow_users, ip_address, external_ip, response) 
+ - saveFollowUserData(request, response, external_ip) 
+ - followUserBehavior(page_access, duration, username) 
+ - followUsers(new_page_access, req, res) 
+ - getIpAddress() 
+ - checkAuthentication(req, res, next) 
+ - getSuggestionRoom(rooms, price, size, avgAminities) 
+ - get4NumNearest(rooms, att, value)
+ - getIndicesOfMin(inp, n)
+ - checkNotNull(...items) 
+ - checkIsNaturalNumber(...items) 
+ - checkIsPositiveFloat(...items) 
+ - isValidEmail(email) 
+ - isValidIPaddress(ipaddress) 
+ - isValidUsername(username) 
+ - isValidUser(user) 
+ - isAceptableUser(user)
+ - activityIsAbleToUpdate(activity) 
+ - followUserIsAbleToUpdate(followUser) 
+ - ipSuggestIsAbleToUpdate(ipSuggest)
+ - renderChangePWError(err, res) 
+ - getMailContent(subject, time) </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>340</x>
+      <y>30</y>
+      <w>350</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>--
+ - activityModel: activity-model
+ - userModel: user-model
+ - followUserModel: follow-users-model
+ - ipSuggestModel: ip-suggest-model
+ - externalip: externalip &lt;&lt;const&gt;&gt;
+ - cookie: cookie;
+ - appConst: app-const
+ - httpRequest: request;
+ - nodemailer: nodemailer;
+ - transporter: Transport</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

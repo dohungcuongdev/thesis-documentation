@@ -99,7 +99,7 @@ style=wordwrap</panel_attributes>
       <h>220</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
-HotelItemDAO
+HotelItemDAO&lt;T&gt;
 --
 
 --
