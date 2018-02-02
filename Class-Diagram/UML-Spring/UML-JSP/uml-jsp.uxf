@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>40</y>
+      <w>210</w>
+      <h>440</h>
+    </coordinates>
+    <panel_attributes>JSPF
+--
+activity
+all-mes
+data-collection
+footer
+google-map
+head
+header
+ip-colunm-chart
+left-sidebar
+member-colunm-chart
+mes-box
+mes-note
+message
+navigation
+noti
+pie-chart
+related-room
+related-service
+single-room
+single-service
+sub-content
+table-restaurant
+table-rooms
+table-users
+tracking</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>290</x>
+      <y>30</y>
+      <w>210</w>
+      <h>490</h>
+    </coordinates>
+    <panel_attributes>JSP
+--
+add-room
+add-service
+click-tracking
+country-chart
+customer
+edit-room
+edit-service
+follow-all-users
+follow-users
+fqa
+index
+ip-details
+login
+manage-restaurant
+manage-rooms
+manage-users
+member-chart
+message
+notification
+page-access-chart
+profile
+reply Book Room
+reply Cancel Room
+room
+search-result
+service
+tracking-users
+user</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>200</x>
+      <y>260</y>
+      <w>110</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>490</x>
+      <y>260</y>
+      <w>110</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>800</x>
+      <y>250</y>
+      <w>140</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>AppController</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>580</x>
+      <y>250</y>
+      <w>140</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>FrontController</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>710</x>
+      <y>260</y>
+      <w>110</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+</diagram>
