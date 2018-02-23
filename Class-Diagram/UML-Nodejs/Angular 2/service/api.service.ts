@@ -4,24 +4,24 @@ import * as AppConst from '../constant/app.const';  //use constant
 
 export default class ApiService<T> { // no need to import from app module
 
-    protected apiUrl: string
-    protected http: Http
+ # apiUrl: string
+ # http: Http
 
 
-    constructor(injector: Injector) 
+ + constructor(injector: Injector) 
 
-    protected getAll(): Observable<any[]> 
+ # getAll(): Observable<any[]> 
 
-    protected get(id): Observable<any> 
+ # get(id): Observable<any> 
 
-    protected getAllFromURL(specialURL): Observable<any[]> 
+ # getAllFromURL(specialURL): Observable<any[]> 
 
-    protected getAllby(value, specialURL): Observable<any[]> 
+ # getAllby(value, specialURL): Observable<any[]> 
 
-    protected add(obj): Observable<Response> 
+ # add(obj): Observable<Response> 
 
-    protected remove(id): Observable<Response> 
+ # remove(id): Observable<Response> 
 
-    protected edit(id, obj): Observable<Response> 
+ # edit(id, obj): Observable<Response> 
 
 }

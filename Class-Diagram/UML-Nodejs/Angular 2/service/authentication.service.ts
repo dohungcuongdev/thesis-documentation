@@ -5,14 +5,14 @@ declare var swal: any;
 @Injectable()
 
 export class AuthenticationService {
-    authenticated = false
+ + authenticated = false
 
-    constructor(
-        private data: InMemoryDataService,
-        private userservice: UserService,
-        private cookie: CookieService) { }
+ + constructor(
+   data: InMemoryDataService,
+   userservice: UserService,
+   cookie: CookieService) { }
 
-    public checkAuthentication() 
+ + public checkAuthentication() 
 
-    public pleaselogin(): void 
+ + public pleaselogin(): void 
 }

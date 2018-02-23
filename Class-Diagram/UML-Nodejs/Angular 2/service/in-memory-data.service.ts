@@ -2,21 +2,21 @@
 import * as AppConst from '../constant/app.const';
 
 export class InMemoryDataService {
-  hotelservice: HotelService
-  room: Room
-  user: User
-  no_img = AppConst.IMG_NOT_FOUND
+ + hotelservice: HotelService
+ + room: Room
+ + user: User
+ + no_img = AppConst.IMG_NOT_FOUND
 
-  constructor() 
+ + constructor() 
 
-  resetHotelservice() 
+ + resetHotelservice() 
 
-  resetRoom() 
+ + resetRoom() 
 
-  resetUser() 
+ + resetUser() 
 
-  addImgURLRoom() 
+ + addImgURLRoom() 
 
-  addImgURLService() 
+ + addImgURLService() 
 
 }
