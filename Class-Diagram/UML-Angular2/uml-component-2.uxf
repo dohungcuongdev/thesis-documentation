@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>30</x>
+      <y>240</y>
+      <w>410</w>
+      <h>520</h>
+    </coordinates>
+    <panel_attributes>RoomDetailComponent
+--
+ - roomid: number
+ - clicked_book_now: boolean
+ - star: number
+ - listfeedbackroom = Array&lt;Activity&gt;
+ - isloading: boolean
+--
+ - constructor(private router: Router,
+    route: ActivatedRoute,
+    roomservice: RoomService,
+    userservice: UserService,
+    activityservice: ActivityService,
+    auth: AuthenticationService,
+    data: InMemoryDataService,
+    followUserService: FollowUsersService,
+    validationService: ValidationService) 
+    
+ + ngOnInit()
+ 
+ - showRoomDetails()
+ - calculateRating
+ - loadFeedbackRoomData
+ - booknow()
+ - bookroom(checkindate: Date, checkoutdate: Date)
+ - computeBalance(checkindate: Date, checkoutdate: Date)
+ - checkBooking(checkindate: Date, checkoutdate: Date)
+ - saveActivity(checkindate: Date, checkoutdate: Date)
+ - cancelRoom()
+ - sendCancleRequest()
+ - rating(star: number)
+ - sendroomfeedback(mes: string)
+ </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>10</y>
+      <w>290</w>
+      <h>490</h>
+    </coordinates>
+    <panel_attributes>RestaurantComponent
+--
+ - numpage: number
+ - pages: Array&lt;number&gt;
+ - services_page: Array&lt;HotelService&gt;
+ - pageclicked: number
+ - searchboxvalue: string
+ - searchselected: string
+ - listservice: Array&lt;HotelService&gt;
+ - isloading: boolean
+--
+ + constructor( 
+    router: Router,
+    restaurantService: RestaurantService,
+    data: InMemoryDataService,
+    followUserService: FollowUsersService
+
+ + ngOnInit()
+ - showAllRestaurantItems()
+ - getFullImgURL(imgName: string)
+ - initializeNumPage()
+ - initializeServiceOfPage()
+ - clickpage(page: number)
+ - clickpreviouspage()
+ - clicknextpage()
+ - viewServiceDetails(id: string)
+ - resetpage()
+ - search(type: string)
+ - searchInput(key: string)
+ - clickImage(img: string)
+ 
+ 
+ </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>550</y>
+      <w>290</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>RoomsTariffComponent
+--
+
+--
+ - constructor(data: InMemoryDataService)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>760</x>
+      <y>0</y>
+      <w>290</w>
+      <h>510</h>
+    </coordinates>
+    <panel_attributes>RoomsComponent
+--
+  numRoomsEachPage: number
+  numpage: number
+  pages: Array&lt;number&gt;
+  rooms_page: Array&lt;Room&gt;
+  pageclicked: number
+  searchselected: string
+  searchboxvalue: string
+  listrooms: Array&lt;Room&gt;
+  isloading: boolean
+--
+ + constructor( 
+    protected router: Router,
+    protected roomservice: RoomService,
+    protected data: InMemoryDataService,
+    protected followUserService: FollowUsersService)
+
+ + ngOnInit()
+ - showAllRooms()
+ - getFullImgURL(imgName: string)
+ - initializeNumPage()
+ - initializeServiceOfPage() 
+ - initializeRoomOfPage()
+ - clickpage(page: number)
+ - clickpreviouspage()
+ - clicknextpage()
+ - viewRoomDetails(id: string)
+ - resetpage()
+ - search(type: string)
+ - searchInput(key: string)
+ - clickImage(img: string)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>90</x>
+      <y>10</y>
+      <w>290</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>HotelServicesComponent
+--
+ - hotel_serviceid: number
+ - isloading: boolean
+--
+ - constructor(
+    route: ActivatedRoute,
+    restaurantservice: RestaurantService,
+    data: InMemoryDataService,
+    followUserService: FollowUsersService) 
+    
+ + ngOnInit()
+ 
+ - showHotelServiceItem() </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>770</x>
+      <y>550</y>
+      <w>290</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>RoomsSuggestionComponent
+--
+
+--
+ - constructor(data: InMemoryDataService)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>660</x>
+      <y>670</y>
+      <w>290</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>TopRoomComponent
+--
+ - listrooms: Array&lt;Room&gt;
+ - isloading: boolean
+--
+ + constructor(
+    router: Router,
+    roomservice: RoomService,
+    data: InMemoryDataService,
+    followUserService: FollowUsersService)
+
+ - ngOnInit()
+
+ - clickImage()</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>50</x>
+      <y>470</y>
+      <w>240</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>Activity
+--
+ + id: string
+ + username: string
+ + name: string
+ + click: string
+ + details: string
+ + note: string
+ + content: string
+ + response: string
+ + result: string
+ + created_at: Date
+--
+ + constructor(name: string,
+ username: string, click: string, 
+ details: string, note: string, 
+ content: string, response: string) 
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>50</x>
+      <y>280</y>
+      <w>240</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>FollowUsers
+--
+ + id: string
+ + username: string
+ + page_access: string
+ + duration: number
+--
+ + constructor(username: string, 
+ page_access: string, 
+ duration: number) </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>350</x>
+      <y>320</y>
+      <w>250</w>
+      <h>440</h>
+    </coordinates>
+    <panel_attributes>Room
+--
++ id: string
++ name: string
++ size: number
++ numpeople: number
++ status: string
++ img: string
++ img2: string
++ type: string
++ details: string
++ amenities: string
++ booked_by: string
++ checkin: Date
++ checkout: Date
++ imgwithURL: string
++ imgwithURL2: string
++ star: number
++ numvote: number
++ average_star: number
+--
+ + constructor(name: string, 
+ size: number, price: number, 
+ numpeople: number, status: string, 
+ img: string, img2: string, type: string, 
+ details: string, amenities: string, 
+ booked_by: string, checkin: Date, 
+ checkout: Date, star: number)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>50</x>
+      <y>30</y>
+      <w>240</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>User
+--
+    id: string
+    username: string
+    name: string
+    phone: string
+    address: string
+    balance: number
+    created_at: Date
+--
+ +     constructor(username: string, name: string, 
+ phone: string, address: string, 
+ created_at: Date, balance: number)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>350</x>
+      <y>0</y>
+      <w>250</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>HotelService
+--
+ + id: string
+ + name: string
+ + type: string
+ + price: number
+ + img: string
+ + img2: string
+ + quantity: number
+ + details: string
+ + note: string
+ + imgwithURL: string
+ + imgwithURL2: string
+--
+ + constructor(name: string, 
+ type: string, price: number, 
+ img: string, img2: string, 
+ quantity: number, details: string, 
+ note: string) </panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

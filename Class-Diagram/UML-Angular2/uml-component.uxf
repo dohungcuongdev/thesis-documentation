@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>30</x>
+      <y>430</y>
+      <w>120</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>Content 
+Of One Page</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>240</x>
+      <y>0</y>
+      <w>700</w>
+      <h>1110</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>140</x>
+      <y>440</y>
+      <w>120</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+is one of</panel_attributes>
+    <additional_attributes>100.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>250</x>
+      <y>860</y>
+      <w>280</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>RoomsTariffComponent
+--
+
+--
+ - constructor(data: InMemoryDataService)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>250</x>
+      <y>990</y>
+      <w>280</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>RoomsSuggestionComponent
+--
+
+--
+ - constructor(data: InMemoryDataService)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>620</x>
+      <y>580</y>
+      <w>290</w>
+      <h>510</h>
+    </coordinates>
+    <panel_attributes>RoomsComponent
+--
+  numRoomsEachPage: number
+  numpage: number
+  pages: Array&lt;number&gt;
+  rooms_page: Array&lt;Room&gt;
+  pageclicked: number
+  searchselected: string
+  searchboxvalue: string
+  listrooms: Array&lt;Room&gt;
+  isloading: boolean
+--
+ + constructor( 
+    protected router: Router,
+    protected roomservice: RoomService,
+    protected data: InMemoryDataService,
+    protected followUserService: FollowUsersService)
+
+ + ngOnInit()
+ - showAllRooms()
+ - getFullImgURL(imgName: string)
+ - initializeNumPage()
+ - initializeServiceOfPage() 
+ - initializeRoomOfPage()
+ - clickpage(page: number)
+ - clickpreviouspage()
+ - clicknextpage()
+ - viewRoomDetails(id: string)
+ - resetpage()
+ - search(type: string)
+ - searchInput(key: string)
+ - clickImage(img: string)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>250</x>
+      <y>250</y>
+      <w>280</w>
+      <h>580</h>
+    </coordinates>
+    <panel_attributes>RoomDetailComponent
+--
+ - roomid: number
+ - clicked_book_now: boolean
+ - star: number
+ - listfeedbackroom = Array&lt;Activity&gt;
+ - isloading: boolean
+--
+ - constructor(private router: Router,
+    route: ActivatedRoute,
+    roomservice: RoomService,
+    userservice: UserService,
+    activityservice: ActivityService,
+    auth: AuthenticationService,
+    data: InMemoryDataService,
+    followUserService: FollowUsersService,
+    validationService: ValidationService) 
+    
+ + ngOnInit()
+ 
+ - showRoomDetails()
+ - calculateRating
+ - loadFeedbackRoomData
+ - booknow()
+ - bookroom(checkindate: Date, 
+                  checkoutdate: Date)
+ - computeBalance(checkindate: Date, 
+                 checkoutdate: Date)
+ - checkBooking(checkindate: Date, 
+                 checkoutdate: Date)
+ - saveActivity(checkindate: Date, 
+                 checkoutdate: Date)
+ - cancelRoom()
+ - sendCancleRequest()
+ - rating(star: number)
+ - sendroomfeedback(mes: string)
+ </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>250</x>
+      <y>20</y>
+      <w>280</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>HomeComponent
+--
+ 
+--
+ + constructor( 
+     route: ActivatedRoute,
+     router: Router,
+     auth: AuthenticationService,
+     userservice: UserService,
+     data: InMemoryDataService,
+     cookie: CookieService,
+     followUserService: FollowUsersService)
+     
+ + ngOnInit()
+ </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>620</x>
+      <y>130</y>
+      <w>290</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>ReservationComponent
+--
+
+--
+ + constructor(
+    auth: AuthenticationService,
+    activityservice: ActivityService, 
+    followUserService: FollowUsersService,
+    validationService: ValidationService) 
+
+ - submitReservation(name: string, 
+ email: string, phone: string, 
+ numRoom: number, numAdult: number, 
+ checkin: Date, checkout: Date, mes: string)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>520</x>
+      <y>830</y>
+      <w>120</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+uses</panel_attributes>
+    <additional_attributes>100.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>520</x>
+      <y>1010</y>
+      <w>120</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+uses</panel_attributes>
+    <additional_attributes>100.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>520</x>
+      <y>120</y>
+      <w>120</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+uses</panel_attributes>
+    <additional_attributes>100.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>520</x>
+      <y>250</y>
+      <w>120</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+uses</panel_attributes>
+    <additional_attributes>100.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+</diagram>

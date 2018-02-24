@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>100</x>
+      <y>770</y>
+      <w>880</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>FollowUsersService
+--
+
+--
+ + constructor(injector: Injector, http: Http, private data: InMemoryDataService, private cookie: CookieService) 
+ + getAll(): Observable&lt;FollowUsers[]&gt; 
+ + getByID(id: string): Observable&lt;FollowUsers&gt; 
+ + getByUserIP(userIP: string): Observable&lt;FollowUsers[]&gt; 
+ + addFollowUsers(follow_users: FollowUsers): Observable&lt;Response&gt; 
+ + remove_follow_users(id: string): Observable&lt;Response&gt; 
+ + edit_follow_users(follow_users: FollowUsers): Observable&lt;Response&gt; 
+ + followUsers(new_page_access: string) 
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>740</x>
+      <y>190</y>
+      <w>240</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>AuthenticationService
+--
+ + isAuthenticated: boolean
+--
+ + constructor(
+   data: InMemoryDataService,
+   userservice: UserService,
+   cookie: CookieService) { }
+
+ + checkAuthentication() 
+ + pleaselogin(): void </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>100</x>
+      <y>360</y>
+      <w>450</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>ActivityService
+--
+
+--
+ + constructor(injector: Injector, http: Http) 
+ + getAllActivity(): Observable&lt;Activity[]&gt; 
+ + getActivityByID(id: string): Observable&lt;Activity&gt; 
+ + getAllActivityByUserName(username: string): Observable&lt;Activity[]&gt; 
+ + getFeedbackRoomById(roomid: string): Observable&lt;Activity[]&gt; 
+ + addActivity(activity: Activity): Observable&lt;Response&gt; 
+ + removeActivity(id: string): Observable&lt;Response&gt; 
+ + editActivity(activity: Activity): Observable&lt;Response&gt; </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>100</x>
+      <y>0</y>
+      <w>350</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>ApiService&lt;T&gt;
+--
+
+ # apiUrl: string
+ # http: Http
+ 
+--
+ + constructor(injector: Injector) 
+ # getAll(): Observable&lt;any[]&gt; 
+ # get(id): Observable&lt;any&gt; 
+ # getAllFromURL(specialURL): Observable&lt;any[]&gt; 
+ # getAllby(value, specialURL): Observable&lt;any[]&gt; 
+ # add(obj): Observable&lt;Response&gt; 
+ # remove(id): Observable&lt;Response&gt; 
+ # edit(id, obj): Observable&lt;Response&gt; </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>740</x>
+      <y>0</y>
+      <w>240</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>InMemoryDataService
+--
+ + hotelservice: HotelService
+ + room: Room
+ + user: User
+--
+ + constructor() 
+ + resetHotelservice() 
+ + resetRoom() 
+ + resetUser() 
+ + addImgURLRoom() 
+ + addImgURLService() 
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>610</x>
+      <y>600</y>
+      <w>370</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>RestaurantService
+--
+
+--
+ + constructor(injector: Injector, _http: Http) 
+ + getAllService(): Observable&lt;HotelService[]&gt; 
+ + getHotelService(id: string): Observable&lt;HotelService&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>100</x>
+      <y>580</y>
+      <w>450</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>RoomService
+--
+
+--
+ + constructor(injector: Injector, http: Http) 
+ + getAllRooms(): Observable&lt;Room[]&gt; 
+ + getRoom(room_name: string): Observable&lt;Room&gt; 
+ + bookRoom(room: Room): Observable&lt;Response&gt; 
+ + sendFeedbackRoom(room: Room): Observable&lt;Response&gt; 
+ + getAllRoomsFromURL(specialURL): Observable&lt;Room[]&gt; </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>610</x>
+      <y>420</y>
+      <w>370</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>UserService
+--
+
+--
+ + constructor(injector: Injector, public _http: Http) 
+ + getUser(id: string): Observable&lt;User&gt; 
+ + editUser(user): Observable&lt;Response&gt; </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>480</x>
+      <y>0</y>
+      <w>240</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>ValidationService
+--
+
+--
+ + validateEmail(inputText) 
+ + swAlertInputToBookNow() 
+ + swAlertEmailSent() 
+ + swAlertNotEnoughInput() 
+ + swAlertErr(content: string) 
+ + swAlertFeedbackSent() 
+ + swAlertUsualErr(err: string) 
+ + swAlert(content: string) 
+ + swAlertEditSuccess() 
+ + swAlertNoCheckDate() 
+ + swAlertBookUpToDate() 
+ + swAlertBookOutOfDate() 
+ + swAlertCannotPay() 
+ + swAlertBookSuccess()  </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>300</x>
+      <y>230</y>
+      <w>80</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+extends</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>340</x>
+      <y>230</y>
+      <w>470</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;100.0;240.0;100.0;240.0;170.0;450.0;170.0;450.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>340</x>
+      <y>230</y>
+      <w>290</w>
+      <h>450</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;100.0;240.0;100.0;240.0;430.0;270.0;430.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>340</x>
+      <y>230</y>
+      <w>260</w>
+      <h>560</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+extends</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;100.0;240.0;100.0;240.0;540.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>50</x>
+      <y>150</y>
+      <w>70</w>
+      <h>530</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>50.0;10.0;10.0;10.0;10.0;510.0;50.0;510.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>60</x>
+      <y>310</y>
+      <w>70</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>extends
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>850</x>
+      <y>350</y>
+      <w>60</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+uses</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

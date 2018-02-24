@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>370</x>
+      <y>0</y>
+      <w>280</w>
+      <h>1630</h>
+    </coordinates>
+    <panel_attributes>AppConst
+--
+
+ + EXPRESS_SERVER_URL: const
+ + SPRING_SERVER_URL: const
+ + SPRING_RESOURCE_URL: const
+ + SPRING_API_URL: const
+ + EXPRESS_API_URL: const
+ + USER_API: const
+ + ACTIVITY_API: const
+ + FOLLOWUSER_API: const
+ + RESTAURANT_API: const
+ + ROOM_API: const
+ + USER_API_URL: const
+ + ACTIVITY_API_URL: const
+ + ACTIVITY_UN_API_URL: const
+ + ACTIVITY_FB_API_URL: const
+ + ACTIVITY_FB_ROOM_API_URL: const
+ + FOLLOWUSER_API_URL: const
+ + RESTAURANT_API_URL: const
+ + ROOM_API_URL: const
+ + SUGGEST_ROOM_API: const
+ + USER_IP_FULL_API: const
+ + BOOK_ROOM_API: const
+ + FEEDBACK_ROOM_API: const
+ + IMG_URL: const
+ + PHOTO_URL: const
+ + ROOM_IMG_URL: const
+ + RESTAURANT_IMG_URL: const
+ + LOGIN_RES: const
+ + LOGIN_TO_USE: const
+ + ERROR: const
+ + NOT_ENOUGH_INFOR: const
+ + EDIT_INFOR_SUCCESS: const
+ + CLICK_PROFILE: const
+ + CLICK_HOTEL_SERVICE: const
+ + CLICK_RESTAURANT: const
+ + SEARCH_RESTAURANT: const
+ + FILTER_RESTAURANT: const
+ + CLICK_IMG_RESTAURANT: const
+ + CLICK_TOPROOM: const
+ + CLICK_SUGGEST_ROOM: const
+ + FILTER_ROOM: const
+ + SEARCH_ROOM: const
+ + CLICK_ROOMS: const
+ + CLICK_IMG_ROOM: const
+ + ROOM_TYPES: const
+ + CLICK_HOMEPAGE: const
+ + CLICK_INTRO: const
+ + CLICK_CONTACT: const
+ + HOTEL_INTRO: const
+ + ROOM_INTRO: const
+ + RESTAURANT_INTRO : const
+ + CLICK_ROOM_DETAIL: const
+ + INPUT_CHECKIN_CHECKOUT: const
+ + NO_CHECKIN_CHECKOUT: const
+ + UP_TO_DATE: const
+ + OUT_OF_DATE: const
+ + CLICK_GALLERY: const
+ + SEND_CONTACT: const
+ + GUEST: const
+ + CONTACT: const
+ + MES_SENT: const
+ + NOT_RES_YET: const
+ + NO_RES: const
+ + MES_SENT_SUCCESS: const
+ + CLICK_FEED_BACK: const
+ + FEEDBACKNAME: const
+ + FEEDBACKCLICK: const
+ + FEEDBACK_SENT: const
+ + RATING: const
+ + STAR: const
+ + NO_CONT: const
+ + FEEDBACK_HOTEL: const
+ + TKS_FB: const
+ + FB_SENT_SUCCESS: const
+ + SUCCESS: const
+ + CONGRATS: const
+ + ERR: const
+ + ERR_TITLE: const
+ + FB_ROOM: const
+ + NOT_INPUT_CI_CO: const
+ + NOT_TODAY: const
+ + CI_BEFORE_CI: const
+ + NO_MONEY: const
+ + CANNOT_PAY: const
+ + BOOK_SUCCESS: const
+ + BOOKED: const
+ + PAYMENT: const
+ + CANCEL: const
+ + SURE_CANCEL: const
+ + ACCEPT_CANCEL: const
+ + CLICK_CANCEL: const
+ + CLICK_CANCEL_ROOM: const
+ + CANCEL_CONT: const
+ + SENT_FB_ROOM: const
+ + NOT_FOUND: const
+ + IMG_NOT_FOUND: const
+ + FOOTER: const
+
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
